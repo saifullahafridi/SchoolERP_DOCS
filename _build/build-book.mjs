@@ -50,7 +50,7 @@ function render(md, prefix, toc) {
 // Front matter from README: intro paragraphs + the sections after "Contents"
 const readme = read('README.md');
 const bookTitle = readme.match(/^# (.+)$/m)[1];
-const intro = readme.split(/^## Contents$/m)[0].replace(/^# .+\n/, '').trim();
+const intro = readme.split(/^## Contents$/m)[0].replace(/^# .+\n/, '').replace(/^📖.*\n?/m, '').trim();
 const afterContents = readme.split(/^## Contents$/m)[1].replace(/^[\s\S]*?(?=^## )/m, '');
 const introToc = [];
 const introHtml = render(afterContents, 'ch00', introToc);
