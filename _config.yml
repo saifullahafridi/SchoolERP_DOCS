@@ -1,0 +1,8 @@
+title: SchoolERP User Guide
+description: How to use every screen of SchoolERP, with screenshots
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: false
