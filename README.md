@@ -1,5 +1,7 @@
 # School ERP — User Guide
 
+📖 **Read it as a book:** https://saifullahafridi.github.io/SchoolERP_DOCS/ (every chapter on one page, with a chapter list on the side)
+
 School ERP is a web app that runs the whole school in one place: admissions, attendance, fees, exams, payroll and a
 portal for parents. You open it in a browser (Chrome or Edge) on a computer or a mobile phone.
 
