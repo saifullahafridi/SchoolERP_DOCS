@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="School ERP runs admissions, attendance, fees, exams, payroll and a parent portal in one web app.">
+<title>School ERP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0}
+img{max-width:100%}
+/* Layout: navy masthead band with the dashboard as hero, then alternating text/screenshot feature rows, role grid, setup steps, closing band. Accent follows the app's own indigo. */
+:root{
+  --bg:#f6f6fb; --surface:#ffffff; --fg:#141a33; --muted:#5a6080; --line:#e2e3ef;
+  --accent:#5b45e0; --accent-soft:#ecebfd; --navy:#111735; --on-navy:#e9eaf6; --on-navy-muted:#a3a8c8;
+  --ok:#127a52; --ok-soft:#ddf5ea;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"Figtree",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0d1022; --surface:#161a33; --fg:#e8e9f5; --muted:#a0a5c4; --line:#272c4c;
+  --accent:#8d7dff; --accent-soft:#231f4d; --navy:#080a18; --on-navy:#e9eaf6; --on-navy-muted:#9097bb;
+  --ok:#5fd3a0; --ok-soft:#123327; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d1022; --surface:#161a33; --fg:#e8e9f5; --muted:#a0a5c4; --line:#272c4c;
+  --accent:#8d7dff; --accent-soft:#231f4d; --navy:#080a18; --on-navy:#e9eaf6; --on-navy-muted:#9097bb;
+  --ok:#5fd3a0; --ok-soft:#123327; color-scheme:dark}
+
+body{background:var(--bg);color:var(--fg);font:400 1.0625rem/1.6 var(--body)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);line-height:1.1;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:800}
+h3{font-size:1.2rem;font-weight:600}
+p{margin:0}
+a{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.eyebrow{font:600 .78rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.mono{font-family:var(--mono);font-size:.88em}
+img.shot{display:block;width:100%;height:auto;border-radius:10px;border:1px solid var(--line);box-shadow:0 18px 40px -24px rgba(17,23,53,.45)}
+
+/* Masthead */
+.mast{background:var(--navy);color:var(--on-navy)}
+.mast .wrap{padding-block:22px 0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font:800 1.2rem/1 var(--display)}
+.brand i{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;background:#5b45e0;font-style:normal}
+.nav a{color:var(--on-navy);font-weight:500;text-decoration:none;border:1px solid rgba(233,234,246,.25);padding:8px 14px;border-radius:8px}
+.nav a:hover{background:rgba(233,234,246,.08)}
+.hero{display:grid;gap:28px;padding-block:56px 0}
+.hero h1{font-size:clamp(2.3rem,6vw,4.1rem);font-weight:800;max-width:15ch}
+.hero h1 em{font-style:normal;color:#a99cff}
+.hero p.lead{color:var(--on-navy-muted);font-size:1.18rem;max-width:56ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:.9rem;padding:6px 12px;border-radius:999px;background:rgba(233,234,246,.08);border:1px solid rgba(233,234,246,.14)}
+.hero-shot{margin-top:12px;margin-bottom:-90px;position:relative}
+.hero-shot img{border-radius:12px 12px 0 0;border:1px solid rgba(233,234,246,.18);box-shadow:0 30px 70px -30px rgba(0,0,0,.7)}
+.after-hero{height:90px}
+
+/* Facts strip */
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-block:64px 8px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fact{padding:22px 20px;display:grid;gap:4px;align-content:start}
+.fact+.fact{border-left:1px solid var(--line)}
+.fact b{font:800 1.9rem/1.1 var(--display);color:var(--accent);font-variant-numeric:tabular-nums}
+.fact span{color:var(--muted);font-size:.95rem}
+
+/* Feature rows */
+.features{display:grid;gap:96px;padding-block:72px}
+.row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:center}
+.row.flip{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.row.flip .copy{order:2}
+.copy{display:grid;gap:16px;min-width:0}
+.copy p{color:var(--muted)}
+.copy ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.copy li{padding-left:26px;position:relative}
+.copy li::before{content:"";position:absolute;left:2px;top:.55em;width:12px;height:7px;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
+.media{min-width:0;display:grid;gap:14px}
+.phone-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:20px;align-items:center}
+.phone{max-width:260px;justify-self:center;border-radius:28px;padding:8px;background:var(--navy);box-shadow:0 24px 50px -26px rgba(17,23,53,.6)}
+.phone img{display:block;width:100%;border-radius:22px}
+
+/* SMS sample */
+.sms{justify-self:start;max-width:360px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px;display:grid;gap:6px;font-size:.95rem}
+.sms small{color:var(--muted);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.sms .bubble{background:var(--ok-soft);color:var(--fg);padding:10px 12px;border-radius:12px 12px 12px 4px}
+
+/* Roles */
+.roles{padding-block:72px;background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.roles .wrap{display:grid;gap:32px}
+.role-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.role{background:var(--surface);padding:22px;display:grid;gap:8px;align-content:start}
+.role h3{display:flex;align-items:center;gap:10px}
+.role h3 span{font:500 .72rem/1 var(--mono);padding:4px 7px;border-radius:5px;background:var(--accent-soft);color:var(--accent)}
+.role p{color:var(--muted);font-size:.97rem}
+
+/* Setup steps */
+.setup{padding-block:72px}
+.setup .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:48px}
+.setup .intro{display:grid;gap:14px;align-content:start}
+.setup .intro p{color:var(--muted)}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;gap:0}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;padding-block:16px;border-top:1px solid var(--line)}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+.steps li::before{content:counter(s);font:800 1.5rem/1 var(--display);color:var(--accent)}
+.steps b{display:block}
+.steps span{color:var(--muted);font-size:.97rem}
+
+/* FAQ */
+.faq{padding-block:0 72px}
+.faq .wrap{display:grid;gap:24px}
+.qa{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 48px}
+.qa div{display:grid;gap:6px}
+.qa p{color:var(--muted)}
+
+/* Close */
+.close{background:var(--navy);color:var(--on-navy)}
+.close .wrap{padding-block:64px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
+.close h2{max-width:20ch}
+.close p{color:var(--on-navy-muted);margin-top:10px;max-width:52ch}
+.btn{display:inline-block;background:#5b45e0;color:#fff;text-decoration:none;font-weight:600;padding:13px 22px;border-radius:9px}
+.btn:hover{background:#4a35cc}
+.btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+@media (max-width:860px){
+  .row,.row.flip,.setup .wrap{grid-template-columns:minmax(0,1fr);gap:28px}
+  .row.flip .copy{order:0}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fact:nth-child(3){border-left:0}
+  .fact:nth-child(n+3){border-top:1px solid var(--line)}
+  .role-grid{grid-template-columns:minmax(0,1fr)}
+  .qa{grid-template-columns:minmax(0,1fr)}
+  .features{gap:72px}
+  .hero-shot{margin-bottom:-50px}.after-hero{height:50px}
+}
+@media (max-width:480px){
+  .phone-pair{grid-template-columns:minmax(0,1fr)}
+  .fact{padding:18px 14px}
+}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap">
+    <nav class="nav">
+      <div class="brand"><i aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>
+      </i>School ERP</div>
+      <a href="https://saifullahafridi.github.io/SchoolERP_DOCS/">Read the user guide</a>
+    </nav>
+    <section class="hero">
+      <h1>Run your whole school from <em>one screen</em>.</h1>
+      <p class="lead">Admissions, attendance, fees, exams, payroll and a portal for parents, in one web app. Open it in Chrome or Edge on a computer or a mobile phone. There is nothing to install.</p>
+      <div class="chips"><span>Admissions</span><span>Attendance</span><span>Fees</span><span>Exams &amp; results</span><span>Timetable</span><span>Payroll</span><span>Parent portal</span><span>Branches</span></div>
+      <div class="hero-shot"><img src="images/dashboard.png" alt="The School ERP dashboard showing students, teachers, today's attendance, fees collected this month and a six-month fee chart" width="1366" height="768"></div>
+    </section>
+  </div>
+</header>
+<div class="after-hero"></div>
+
+<main>
+  <div class="wrap">
+    <div class="facts">
+      <div class="fact"><b>15 min</b><span>after attendance, parents of absent children get an SMS</span></div>
+      <div class="fact"><b>1 slip</b><span>for all brothers and sisters, with one family receipt</span></div>
+      <div class="fact"><b>10</b><span>ID cards on one A4 page, with photo and QR code</span></div>
+      <div class="fact"><b>1 login</b><span>for every branch of your school group</span></div>
+    </div>
+
+    <div class="features">
+      <section class="row">
+        <div class="copy">
+          <div class="eyebrow">Fees</div>
+          <h2>Make the month's vouchers in one click. Collect at the counter in seconds.</h2>
+          <p>Set your fee heads and class-wise amounts once. Each month, generate vouchers for the whole school with a due date and late fine.</p>
+          <ul>
+            <li>Type a voucher no., admission no., name or family no. like <span class="mono">F-12</span> at the counter and take the payment</li>
+            <li>Sibling discount applied automatically, for example 20% off tuition for the 2nd child</li>
+            <li>Defaulter list by months unpaid, and SMS or WhatsApp reminders joined into one message per family</li>
+            <li>Running vouchers twice is safe: students who already have one are skipped</li>
+          </ul>
+        </div>
+        <div class="media"><img class="shot" src="images/collect.png" alt="Fee collection screen" loading="lazy" width="1366" height="768"></div>
+      </section>
+
+      <section class="row flip">
+        <div class="copy">
+          <div class="eyebrow">Online payments</div>
+          <h2>JazzCash, Easypaisa and bank transfers, checked in one place.</h2>
+          <p>Parents pay into your school's account, then send the transaction ID and a photo of the receipt from the portal. Your accountant approves or rejects it, and the parent gets an SMS either way.</p>
+          <ul>
+            <li>Approved payments go straight onto the voucher, with the TID as reference</li>
+            <li>A red badge in the menu shows how many proofs are waiting</li>
+            <li>One proof can cover all of a parent's children</li>
+          </ul>
+        </div>
+        <div class="media"><img class="shot" src="images/payment-proofs.png" alt="Transfer proofs waiting for approval" loading="lazy" width="1366" height="768"></div>
+      </section>
+
+      <section class="row">
+        <div class="copy">
+          <div class="eyebrow">Attendance</div>
+          <h2>Parents know the same day when a child is absent.</h2>
+          <p>Teachers mark Present, Absent, Late or Leave for their own sections. Fifteen minutes later, parents of absent children get an SMS. If a teacher fixes a mistake before then, nothing is sent.</p>
+          <ul>
+            <li>Monthly grid for each section, plus staff attendance and leave</li>
+            <li>Pakistan's national holidays added in one click; attendance is closed on holidays</li>
+            <li>Text all parents about a new holiday</li>
+          </ul>
+        </div>
+        <div class="media">
+          <img class="shot" src="images/attendance.png" alt="Daily attendance for a section" loading="lazy" width="1366" height="768">
+          <div class="sms" aria-label="Sample SMS">
+            <small>Sample SMS to a parent</small>
+            <div class="bubble">Ali Raza (Class 1-A) was absent from school today, 24 Oct. — Green Hills School</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="row flip">
+        <div class="copy">
+          <div class="eyebrow">Exams, timetable and homework</div>
+          <h2>Marks in, report cards out.</h2>
+          <p>Teachers enter marks for their own subjects. When all marks are in, publish the exam: totals, percentage, grade and class position are worked out, and parents see the report card in the portal.</p>
+          <ul>
+            <li>Timetable by class and by teacher, with each teacher's workload</li>
+            <li>Daily homework and diary that parents can read</li>
+            <li>School Leaving, Character and Bonafide certificates</li>
+            <li>Promote the whole school at the end of the year</li>
+          </ul>
+        </div>
+        <div class="media"><img class="shot" src="images/results.png" alt="Exam results with grade and position" loading="lazy" width="1366" height="768"></div>
+      </section>
+
+      <section class="row">
+        <div class="copy">
+          <div class="eyebrow">Parent portal</div>
+          <h2>Everything a parent asks the office, on their phone.</h2>
+          <p>Each parent gets a login, usually their mobile number. They see fees due, attendance, homework, results and the timetable for each child, and can send a payment proof without coming to school.</p>
+          <ul>
+            <li>One login covers brothers and sisters, even at different branches</li>
+            <li>Upcoming holidays on the home page</li>
+            <li>Works in any phone browser</li>
+          </ul>
+        </div>
+        <div class="media phone-pair">
+          <div class="phone"><img src="images/portal-phone.png" alt="Parent portal on a phone" loading="lazy" width="390" height="844"></div>
+          <img class="shot" src="images/portal-child.png" alt="A child's page in the portal with fees, attendance, homework, results and timetable tabs" loading="lazy" width="1366" height="768">
+        </div>
+      </section>
+
+      <section class="row flip">
+        <div class="copy">
+          <div class="eyebrow">Staff, payroll and expenses</div>
+          <h2>Payslips each month, and a clear view of income and spending.</h2>
+          <p>Set each person's basic pay and allowances once. Generate the month's payslips, cut absent days if you choose, and recover salary advances in instalments.</p>
+          <ul>
+            <li>Staff see their own payslips and apply for leave from their login</li>
+            <li>Record electricity, rent, repairs and other expenses</li>
+            <li>Fee income beside salaries and expenses, month by month</li>
+          </ul>
+        </div>
+        <div class="media"><img class="shot" src="images/payroll.png" alt="Monthly payroll with net pay and amount still to pay" loading="lazy" width="1366" height="768"></div>
+      </section>
+
+      <section class="row">
+        <div class="copy">
+          <div class="eyebrow">More than one branch</div>
+          <h2>All your branches under one owner login.</h2>
+          <p>Join your campuses in a School Group. Each branch keeps its own students, fees and staff, while head office sees them side by side.</p>
+          <ul>
+            <li>Students, attendance and fees of every branch on one page</li>
+            <li>Collections and defaulters across all branches together</li>
+            <li>Move a student or teacher to another branch; the parent's login follows the child</li>
+          </ul>
+        </div>
+        <div class="media"><img class="shot" src="images/schools.png" alt="Schools and school groups" loading="lazy" width="1366" height="768"></div>
+      </section>
+    </div>
+  </div>
+
+  <section class="roles">
+    <div class="wrap">
+      <div style="display:grid;gap:12px;max-width:60ch">
+        <div class="eyebrow">A login for every person</div>
+        <h2>Each role sees only its own menu.</h2>
+        <p style="color:var(--muted)">Everyone signs in on the same page. Every change to fees, marks, students and staff is kept in the audit log: who did it, when, and the old and new values.</p>
+      </div>
+      <div class="role-grid">
+        <div class="role"><h3>Admin <span>ALL</span></h3><p>The whole school: students, staff, fees, users, settings and bank accounts.</p></div>
+        <div class="role"><h3>Principal <span>ALL</span></h3><p>The same full menu, for the head teacher.</p></div>
+        <div class="role"><h3>Accountant</h3><p>Fee collection, vouchers, transfer proofs, reminders, payroll, expenses and reports.</p></div>
+        <div class="role"><h3>Teacher</h3><p>Attendance, marks and homework for their own classes, plus their own timetable and payslips.</p></div>
+        <div class="role"><h3>Parent</h3><p>Their own children's fees, attendance, results, timetable and homework.</p></div>
+        <div class="role"><h3>Group owner</h3><p>Every branch at once, with combined fee reports and branch transfers.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="setup">
+    <div class="wrap">
+      <div class="intro">
+        <div class="eyebrow">Getting started</div>
+        <h2>Ready for your first fee month in a day.</h2>
+        <p>Bring your student list in Excel. The import checks every row and shows wrong dates, repeated rows or full classes in red before anything is saved.</p>
+      </div>
+      <ol class="steps">
+        <li><div><b>School profile</b><span>Name, phone, address and logo, printed on vouchers, receipts, certificates and ID cards.</span></div></li>
+        <li><div><b>Academic year</b><span>Add the year, for example 2026-27, and make it current.</span></div></li>
+        <li><div><b>Classes, sections and subjects</b><span>Class 1, Class 2 … with sections A, B and how many students fit.</span></div></li>
+        <li><div><b>Staff and fees</b><span>Add staff with their salary, then set fee heads and amounts for each class.</span></div></li>
+        <li><div><b>Students</b><span>Admit one by one or import from Excel. Admission numbers like <span class="mono">2026-0007</span> are given for you.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="wrap">
+      <h2>Common questions</h2>
+      <div class="qa">
+        <div><h3>Does it work on a phone?</h3><p>Yes. Every page works in a phone browser, for staff and for parents.</p></div>
+        <div><h3>Can other schools see our data?</h3><p>No. Each school sees only its own data. Branches in a group are seen together only by your group logins.</p></div>
+        <div><h3>What if we change a fee in the middle of the year?</h3><p>Change it in Fee setup. Vouchers already made keep their amounts; new vouchers use the new amount.</p></div>
+        <div><h3>A parent forgot their password.</h3><p>The school office resets it. The parent chooses a new one at their next sign-in.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="close">
+  <div class="wrap">
+    <div>
+      <h2>See every screen before you decide.</h2>
+      <p>The user guide walks through each page of School ERP with screenshots, from first login to the parent portal.</p>
+    </div>
+    <a class="btn" href="https://saifullahafridi.github.io/SchoolERP_DOCS/">Open the user guide</a>
+  </div>
+</footer>
+</body>
+</html>
