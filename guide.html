@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SchoolERP User Guide</title>
+<meta name="description" content="How to use every screen of School ERP, in one book with screenshots.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fbfaf7; --paper: #ffffff; --ink: #1f2328; --muted: #5f6670; --line: #e6e2d9;
+  --accent: #1d5fa8; --accent-soft: #e8f0fa; --side: #f4f1ea; --shadow: 0 1px 3px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.05);
+  --serif: "Literata", Georgia, serif; --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #15171a; --paper: #1c1f23; --ink: #e6e6e3; --muted: #a0a6ad; --line: #2e3238;
+  --accent: #7fb2ee; --accent-soft: #1f2d3d; --side: #181a1e; --shadow: 0 1px 3px rgba(0,0,0,.4);
+}}
+:root[data-theme="dark"] {
+  --bg: #15171a; --paper: #1c1f23; --ink: #e6e6e3; --muted: #a0a6ad; --line: #2e3238;
+  --accent: #7fb2ee; --accent-soft: #1f2d3d; --side: #181a1e; --shadow: 0 1px 3px rgba(0,0,0,.4);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body { margin: 0; overflow-x: hidden; background: var(--bg); color: var(--ink); font: 17px/1.7 var(--serif); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* top bar */
+.topbar { position: sticky; top: 0; z-index: 30; display: flex; align-items: center; gap: 12px; height: 56px; padding: 0 16px;
+  background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); font-family: var(--sans); }
+.topbar .brand { font-weight: 600; font-size: 15px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.topbar .where { color: var(--muted); font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; }
+.btn { font: 500 14px var(--sans); color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; cursor: pointer; white-space: nowrap; }
+.btn:hover { border-color: var(--accent); }
+#menuBtn { display: none; }
+.progress { position: absolute; left: 0; bottom: -1px; height: 2px; background: var(--accent); width: 0; }
+
+/* layout */
+.layout { display: grid; grid-template-columns: 290px minmax(0, 1fr); }
+.side { position: sticky; top: 56px; height: calc(100vh - 56px); overflow-y: auto; background: var(--side); border-right: 1px solid var(--line);
+  padding: 20px 12px 40px; font: 14px/1.45 var(--sans); }
+.side ol { list-style: none; margin: 0; padding: 0; }
+.side > ol > li > a { display: flex; gap: 8px; padding: 7px 10px; border-radius: 6px; color: var(--ink); font-weight: 500; }
+.side .n { color: var(--muted); min-width: 18px; font-variant-numeric: tabular-nums; }
+.side ul { list-style: none; margin: 0 0 6px; padding: 0 0 0 36px; display: none; }
+.side li.open > ul { display: block; }
+.side ul a { display: block; padding: 4px 8px; border-radius: 6px; color: var(--muted); }
+.side a:hover { background: var(--accent-soft); text-decoration: none; }
+.side a.active { color: var(--accent); background: var(--accent-soft); }
+
+main { padding: 0 24px 80px; }
+.page { max-width: 820px; margin: 32px auto; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); padding: 56px 64px; }
+
+/* cover */
+.cover { text-align: center; padding: 96px 48px; }
+.cover .kicker { font: 600 13px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.cover h1 { font-size: 52px; line-height: 1.1; margin: 16px 0 8px; }
+.cover .sub { font-size: 20px; color: var(--muted); margin: 0 0 40px; }
+.cover .lead { text-align: left; max-width: 600px; margin: 0 auto; }
+.cover .facts { display: flex; justify-content: center; gap: 32px; margin: 40px 0 32px; font-family: var(--sans); color: var(--muted); font-size: 14px; flex-wrap: wrap; }
+.cover .facts b { display: block; font-size: 28px; color: var(--ink); font-family: var(--serif); }
+
+/* contents */
+.contents h2 { font-size: 34px; margin: 0 0 24px; }
+.contents > ol { list-style: none; padding: 0; margin: 0; }
+.contents > ol > li { border-top: 1px solid var(--line); padding: 14px 0; }
+.contents > ol > li > a { display: flex; gap: 16px; align-items: baseline; color: var(--ink); font-weight: 600; font-size: 19px; }
+.contents .n { font: 600 12px var(--sans); color: var(--accent); text-transform: uppercase; letter-spacing: .08em; min-width: 82px; }
+.contents ol ol { list-style: none; padding: 4px 0 0 98px; margin: 0; columns: 2; column-gap: 24px; font: 14px/1.6 var(--sans); }
+.contents ol ol a { color: var(--muted); }
+
+/* chapter */
+.chapter-head { border-bottom: 1px solid var(--line); padding-bottom: 20px; margin-bottom: 28px; }
+.chapter-head .label { font: 600 13px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.chapter-head h2 { font-size: 38px; line-height: 1.15; margin: 8px 0 0; }
+.page h3 { font-size: 25px; line-height: 1.3; margin: 44px 0 12px; }
+.page h4 { font-size: 19px; margin: 28px 0 8px; }
+.anchor { float: left; margin-left: -1em; width: 1em; color: var(--muted); opacity: 0; font-weight: 400; }
+h3:hover .anchor, h4:hover .anchor { opacity: .6; text-decoration: none; }
+.page p, .page li { hyphens: auto; }
+.page code { font-size: .88em; background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; }
+.page blockquote { margin: 20px 0; padding: 12px 18px; border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 8px 8px 0; }
+.page blockquote p { margin: 0; }
+figure { margin: 24px 0 28px; }
+figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; cursor: zoom-in; background: #fff; }
+figcaption { font: 13px var(--sans); color: var(--muted); text-align: center; margin-top: 8px; }
+.table-wrap { overflow-x: auto; margin: 20px 0; }
+table { border-collapse: collapse; width: 100%; font: 15px/1.5 var(--sans); }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-weight: 600; background: var(--side); }
+hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
+.pager { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); font-family: var(--sans); }
+.pager a { display: block; border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; color: var(--ink); font-weight: 500; }
+.pager a:hover { border-color: var(--accent); text-decoration: none; }
+.pager small { display: block; color: var(--muted); font-size: 12px; font-weight: 400; }
+.pager .next { text-align: right; }
+
+/* lightbox */
+.lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(0,0,0,.85); display: none; align-items: center; justify-content: center; padding: 24px; cursor: zoom-out; }
+.lightbox.show { display: flex; }
+.lightbox img { max-width: 100%; max-height: 100%; border-radius: 6px; }
+.scrim { display: none; }
+
+@media (max-width: 960px) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+  .topbar { gap: 8px; }
+  .topbar .brand { flex: 1; min-width: 0; }
+  #printBtn { display: none; }
+  #menuBtn { display: inline-block; }
+  .side { position: fixed; top: 56px; left: 0; bottom: 0; height: auto; width: min(320px, 86vw); z-index: 25; transform: translateX(-100%); transition: transform .2s; }
+  body.menu-open .side { transform: none; }
+  body.menu-open .scrim { display: block; position: fixed; inset: 56px 0 0; background: rgba(0,0,0,.35); z-index: 20; }
+  main { padding: 0 16px 60px; }
+  .page { padding: 32px 22px; margin: 16px auto; border-radius: 10px; }
+  .cover { padding: 56px 22px; }
+  .cover h1 { font-size: 36px; }
+  .chapter-head h2 { font-size: 30px; }
+  .contents ol ol { columns: 1; padding-left: 0; }
+  .contents > ol > li > a { flex-direction: column; gap: 2px; }
+  .topbar .where { display: none; }
+  body { font-size: 16px; }
+}
+@media print {
+  .topbar, .side, .pager, .lightbox, .scrim { display: none !important; }
+  .layout { display: block; } main { padding: 0; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .page { border: 0; box-shadow: none; margin: 0; padding: 0; max-width: none; page-break-after: always; }
+  figure, table { page-break-inside: avoid; }
+  h3, h4 { page-break-after: avoid; }
+  a { color: inherit; }
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <button class="btn" id="menuBtn" aria-label="Open chapters">☰ Chapters</button>
+  <a class="brand" href="#cover">School ERP — User Guide</a>
+  <span class="where" id="where"></span>
+  <button class="btn" id="printBtn" title="Print or save the whole book as PDF">Print / PDF</button>
+  <button class="btn" id="themeBtn" aria-label="Switch light or dark">◐</button>
+  <div class="progress" id="progress"></div>
+</header>
+<div class="scrim" id="scrim"></div>
+<div class="layout">
+<aside class="side" id="side">
+  <ol>
+    <li><a href="#cover">Cover</a></li>
+    <li><a href="#contents">Contents</a></li>
+    <li><a href="#ch00">Before you start</a><ul><li><a href="#ch00-who-can-do-what-roles">Who can do what (Roles)</a></li><li><a href="#ch00-the-sidebar-menu-on-the-left">The Sidebar (menu on the left)</a></li></ul></li>
+<li><a href="#ch01"><span class="n">1</span>Login and Dashboard</a><ul><li><a href="#ch01-login">Login</a></li><li><a href="#ch01-dashboard">Dashboard</a></li></ul></li>
+<li><a href="#ch02"><span class="n">2</span>Different Logins</a><ul><li><a href="#ch02-which-pages-each-staff-login-sees">Which pages each staff login sees</a></li><li><a href="#ch02-admin-and-principal">Admin and Principal</a></li><li><a href="#ch02-accountant">Accountant</a></li><li><a href="#ch02-teacher">Teacher</a></li><li><a href="#ch02-parent">Parent</a></li><li><a href="#ch02-owner-super-admin">Owner (Super Admin)</a></li><li><a href="#ch02-group-login-several-branches">Group login (several branches)</a></li><li><a href="#ch02-good-practice">Good practice</a></li></ul></li>
+<li><a href="#ch03"><span class="n">3</span>Students</a><ul><li><a href="#ch03-student-list">Student list</a></li><li><a href="#ch03-admit-a-new-student">Admit a new student</a></li><li><a href="#ch03-add-many-students-from-excel-import-from-excel">Add many students from Excel (Import from Excel)</a></li><li><a href="#ch03-a-students-page">A student&#39;s page</a></li><li><a href="#ch03-id-cards">ID Cards</a></li></ul></li>
+<li><a href="#ch04"><span class="n">4</span>Attendance and Holidays</a><ul><li><a href="#ch04-daily-student-attendance">Daily student attendance</a></li><li><a href="#ch04-monthly-attendance">Monthly attendance</a></li><li><a href="#ch04-staff-attendance">Staff attendance</a></li><li><a href="#ch04-staff-leave">Staff leave</a></li><li><a href="#ch04-holidays">Holidays</a></li></ul></li>
+<li><a href="#ch05"><span class="n">5</span>Fees</a><ul><li><a href="#ch05-fee-setup">Fee setup</a></li><li><a href="#ch05-fee-vouchers">Fee vouchers</a></li><li><a href="#ch05-make-the-months-vouchers-generate-vouchers">Make the month&#39;s vouchers (Generate vouchers)</a></li><li><a href="#ch05-take-a-payment-at-the-counter-fee-collection">Take a payment at the counter (Fee collection)</a></li><li><a href="#ch05-families">Families</a></li><li><a href="#ch05-transfer-proofs">Transfer proofs</a></li><li><a href="#ch05-fee-reminders">Fee reminders</a></li><li><a href="#ch05-fee-reports">Fee reports</a></li></ul></li>
+<li><a href="#ch06"><span class="n">6</span>Exams, Timetable, Homework, Certificates and Promotion</a><ul><li><a href="#ch06-exams">Exams</a></li><li><a href="#ch06-marks-entry">Marks entry</a></li><li><a href="#ch06-results-and-report-cards">Results and report cards</a></li><li><a href="#ch06-timetable">Timetable</a></li><li><a href="#ch06-homework-and-diary">Homework and diary</a></li><li><a href="#ch06-certificates">Certificates</a></li><li><a href="#ch06-promote-students-end-of-the-year">Promote students (end of the year)</a></li></ul></li>
+<li><a href="#ch07"><span class="n">7</span>Staff, Payroll and Expenses</a><ul><li><a href="#ch07-staff">Staff</a></li><li><a href="#ch07-payroll-monthly-payslips">Payroll (monthly payslips)</a></li><li><a href="#ch07-salary-advances">Salary advances</a></li><li><a href="#ch07-expenses">Expenses</a></li><li><a href="#ch07-income-and-spending">Income and spending</a></li></ul></li>
+<li><a href="#ch08"><span class="n">8</span>School Groups (Branches) and Transfers</a><ul><li><a href="#ch08-one-login-for-all-branches">One login for all branches</a></li><li><a href="#ch08-move-a-student-or-staff-member-to-another-branch-branch-transfers">Move a student or staff member to another branch (Branch transfers)</a></li></ul></li>
+<li><a href="#ch09"><span class="n">9</span>Parent Portal</a><ul><li><a href="#ch09-my-children">My children</a></li><li><a href="#ch09-a-childs-page">A child&#39;s page</a></li><li><a href="#ch09-paying-fees-by-bank-transfer-jazzcash-or-easypaisa">Paying fees by bank transfer, JazzCash or Easypaisa</a></li><li><a href="#ch09-on-a-mobile-phone">On a mobile phone</a></li></ul></li>
+<li><a href="#ch10"><span class="n">10</span>Users, Audit Log, School Setup and Common Questions</a><ul><li><a href="#ch10-users">Users</a></li><li><a href="#ch10-audit-log">Audit log</a></li><li><a href="#ch10-school-setup">School setup</a></li><li><a href="#ch10-schools-owner-only">Schools (Owner only)</a></li><li><a href="#ch10-common-questions">Common questions</a></li></ul></li>
+  </ol>
+</aside>
+<main>
+  <section class="page cover" id="cover" data-title="Cover">
+    <div class="kicker">User Guide</div>
+    <h1>School ERP</h1>
+    <p class="sub">How to use every screen, step by step</p>
+    <div class="lead"><p>School ERP is a web app that runs the whole school in one place: admissions, attendance, fees, exams, payroll and a
+portal for parents. You open it in a browser (Chrome or Edge) on a computer or a mobile phone.</p>
+<p>Many schools can use the same app. Each school sees only its own data. An owner with several branches can join them
+in a School Group and see all branches with one login.</p>
+</div>
+    <div class="facts"><div><b>10</b>chapters</div><div><b>51</b>topics</div><div><b>42</b>screenshots</div></div>
+    <a class="btn" href="#contents">Start reading ↓</a>
+  </section>
+
+  <section class="page contents" id="contents" data-title="Contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#ch00"><span class="n">Start here</span><span class="t">Before you start</span></a>
+        <ol><li><a href="#ch00-who-can-do-what-roles">Who can do what (Roles)</a></li><li><a href="#ch00-the-sidebar-menu-on-the-left">The Sidebar (menu on the left)</a></li></ol></li>
+      
+  <li><a href="#ch01"><span class="n">Chapter 1</span><span class="t">Login and Dashboard</span></a>
+    <ol><li><a href="#ch01-login">Login</a></li><li><a href="#ch01-dashboard">Dashboard</a></li></ol></li>
+  <li><a href="#ch02"><span class="n">Chapter 2</span><span class="t">Different Logins</span></a>
+    <ol><li><a href="#ch02-which-pages-each-staff-login-sees">Which pages each staff login sees</a></li><li><a href="#ch02-admin-and-principal">Admin and Principal</a></li><li><a href="#ch02-accountant">Accountant</a></li><li><a href="#ch02-teacher">Teacher</a></li><li><a href="#ch02-parent">Parent</a></li><li><a href="#ch02-owner-super-admin">Owner (Super Admin)</a></li><li><a href="#ch02-group-login-several-branches">Group login (several branches)</a></li><li><a href="#ch02-good-practice">Good practice</a></li></ol></li>
+  <li><a href="#ch03"><span class="n">Chapter 3</span><span class="t">Students</span></a>
+    <ol><li><a href="#ch03-student-list">Student list</a></li><li><a href="#ch03-admit-a-new-student">Admit a new student</a></li><li><a href="#ch03-add-many-students-from-excel-import-from-excel">Add many students from Excel (Import from Excel)</a></li><li><a href="#ch03-a-students-page">A student&#39;s page</a></li><li><a href="#ch03-id-cards">ID Cards</a></li></ol></li>
+  <li><a href="#ch04"><span class="n">Chapter 4</span><span class="t">Attendance and Holidays</span></a>
+    <ol><li><a href="#ch04-daily-student-attendance">Daily student attendance</a></li><li><a href="#ch04-monthly-attendance">Monthly attendance</a></li><li><a href="#ch04-staff-attendance">Staff attendance</a></li><li><a href="#ch04-staff-leave">Staff leave</a></li><li><a href="#ch04-holidays">Holidays</a></li></ol></li>
+  <li><a href="#ch05"><span class="n">Chapter 5</span><span class="t">Fees</span></a>
+    <ol><li><a href="#ch05-fee-setup">Fee setup</a></li><li><a href="#ch05-fee-vouchers">Fee vouchers</a></li><li><a href="#ch05-make-the-months-vouchers-generate-vouchers">Make the month&#39;s vouchers (Generate vouchers)</a></li><li><a href="#ch05-take-a-payment-at-the-counter-fee-collection">Take a payment at the counter (Fee collection)</a></li><li><a href="#ch05-families">Families</a></li><li><a href="#ch05-transfer-proofs">Transfer proofs</a></li><li><a href="#ch05-fee-reminders">Fee reminders</a></li><li><a href="#ch05-fee-reports">Fee reports</a></li></ol></li>
+  <li><a href="#ch06"><span class="n">Chapter 6</span><span class="t">Exams, Timetable, Homework, Certificates and Promotion</span></a>
+    <ol><li><a href="#ch06-exams">Exams</a></li><li><a href="#ch06-marks-entry">Marks entry</a></li><li><a href="#ch06-results-and-report-cards">Results and report cards</a></li><li><a href="#ch06-timetable">Timetable</a></li><li><a href="#ch06-homework-and-diary">Homework and diary</a></li><li><a href="#ch06-certificates">Certificates</a></li><li><a href="#ch06-promote-students-end-of-the-year">Promote students (end of the year)</a></li></ol></li>
+  <li><a href="#ch07"><span class="n">Chapter 7</span><span class="t">Staff, Payroll and Expenses</span></a>
+    <ol><li><a href="#ch07-staff">Staff</a></li><li><a href="#ch07-payroll-monthly-payslips">Payroll (monthly payslips)</a></li><li><a href="#ch07-salary-advances">Salary advances</a></li><li><a href="#ch07-expenses">Expenses</a></li><li><a href="#ch07-income-and-spending">Income and spending</a></li></ol></li>
+  <li><a href="#ch08"><span class="n">Chapter 8</span><span class="t">School Groups (Branches) and Transfers</span></a>
+    <ol><li><a href="#ch08-one-login-for-all-branches">One login for all branches</a></li><li><a href="#ch08-move-a-student-or-staff-member-to-another-branch-branch-transfers">Move a student or staff member to another branch (Branch transfers)</a></li></ol></li>
+  <li><a href="#ch09"><span class="n">Chapter 9</span><span class="t">Parent Portal</span></a>
+    <ol><li><a href="#ch09-my-children">My children</a></li><li><a href="#ch09-a-childs-page">A child&#39;s page</a></li><li><a href="#ch09-paying-fees-by-bank-transfer-jazzcash-or-easypaisa">Paying fees by bank transfer, JazzCash or Easypaisa</a></li><li><a href="#ch09-on-a-mobile-phone">On a mobile phone</a></li></ol></li>
+  <li><a href="#ch10"><span class="n">Chapter 10</span><span class="t">Users, Audit Log, School Setup and Common Questions</span></a>
+    <ol><li><a href="#ch10-users">Users</a></li><li><a href="#ch10-audit-log">Audit log</a></li><li><a href="#ch10-school-setup">School setup</a></li><li><a href="#ch10-schools-owner-only">Schools (Owner only)</a></li><li><a href="#ch10-common-questions">Common questions</a></li></ol></li>
+    </ol>
+  </section>
+
+  <section class="page chapter" id="ch00" data-title="Before you start">
+    <div class="chapter-head"><div class="label">Start here</div><h2>Before you start</h2></div>
+    <h3 id="ch00-who-can-do-what-roles"><a class="anchor" href="#ch00-who-can-do-what-roles" aria-hidden="true">#</a>Who can do what (Roles)</h3>
+<div class="table-wrap"><table><thead><tr>
+<th>Role</th>
+<th>What they can do</th>
+</tr>
+</thead><tbody><tr>
+<td>Admin</td>
+<td>Everything: students, staff, fees, users, settings, school bank accounts</td>
+</tr>
+<tr>
+<td>Principal</td>
+<td>Same menu as Admin: students, attendance, exams, fees, payroll, users, reports</td>
+</tr>
+<tr>
+<td>Accountant</td>
+<td>Fees, collection, vouchers, payroll, expenses and finance reports</td>
+</tr>
+<tr>
+<td>Teacher</td>
+<td>Attendance, marks and homework for their own classes only</td>
+</tr>
+<tr>
+<td>Parent</td>
+<td>Portal: their children&#39;s fees, attendance, results, timetable and homework; send proof of a fee payment</td>
+</tr>
+<tr>
+<td>Owner (Super Admin)</td>
+<td>Add new schools and school groups</td>
+</tr>
+</tbody></table></div>
+<p>See <a href="#ch02">Different logins</a> for the full list of pages each role can open.</p>
+<h3 id="ch00-the-sidebar-menu-on-the-left"><a class="anchor" href="#ch00-the-sidebar-menu-on-the-left" aria-hidden="true">#</a>The Sidebar (menu on the left)</h3>
+<p>Every page opens from the sidebar on the left. The menu has groups: Overview, Students, Academics, Fees, Finance,
+School and Administration. Only one group is open at a time.</p>
+<p>Press <strong>Ctrl + K</strong> (or click Search at the top) and type a page name or a student name to jump straight there. The
+button at the top right switches between light and dark colours.</p>
+
+    <nav class="pager"><span></span><a href="#ch01" class="next"><small>Chapter 1</small>Login and Dashboard</a></nav>
+  </section>
+
+  <section class="page chapter" id="ch01" data-title="Chapter 1 · Login and Dashboard">
+    <div class="chapter-head"><div class="label">Chapter 1</div><h2>Login and Dashboard</h2></div>
+    <h3 id="ch01-login"><a class="anchor" href="#ch01-login" aria-hidden="true">#</a>Login</h3>
+<p><figure><img src="images/login.png" alt="Login page" loading="lazy"><figcaption>Login page</figcaption></figure></p>
+<ol>
+<li>Open the app&#39;s address in your browser. The login page opens.</li>
+<li>Type your <strong>Username</strong> and <strong>Password</strong>. You do not need a school code: every username is used only once in the
+whole app.</li>
+<li>Click <strong>Sign in</strong>. Staff go to the Dashboard. Parents go to the Portal.</li>
+<li>The first time you sign in, or after your password is reset, you must choose a new password.</li>
+</ol>
+<p>If you type the wrong password many times, login stops for a few minutes. If you forget your password, ask the Admin
+to reset it.</p>
+<h3 id="ch01-dashboard"><a class="anchor" href="#ch01-dashboard" aria-hidden="true">#</a>Dashboard</h3>
+<p><figure><img src="images/dashboard.png" alt="Dashboard" loading="lazy"><figcaption>Dashboard</figcaption></figure></p>
+<p>The Dashboard is the first page after login. It shows the school&#39;s day at a glance:</p>
+<ul>
+<li><strong>Four cards at the top:</strong> number of Students, Teachers, Attendance today (shows <em>Closed</em> on a holiday) and fees
+Collected this month.</li>
+<li><strong>Fee collection:</strong> how much fee came in each month for the last six months.</li>
+<li><strong>Needs attention:</strong> things to look at now, like overdue fees or transfer proofs waiting to be checked. Click a line
+to open that page.</li>
+<li><strong>Three quick buttons</strong> at the top right: Mark attendance, Collect fee and Admit student.</li>
+<li>Lower down: <strong>Today&#39;s attendance</strong> and <strong>Recent admissions</strong>.</li>
+</ul>
+
+    <nav class="pager"><span></span><a href="#ch02" class="next"><small>Next chapter</small>Different Logins</a></nav>
+  </section>
+
+  <section class="page chapter" id="ch02" data-title="Chapter 2 · Different Logins">
+    <div class="chapter-head"><div class="label">Chapter 2</div><h2>Different Logins</h2></div>
+    <p>Every person signs in on the same login page. What they see next depends on their role: each role gets its own menu,
+and pages outside it cannot be opened. Staff logins are made in <strong>Administration → Users</strong>; parent logins are made
+from the student&#39;s page.</p>
+<h3 id="ch02-which-pages-each-staff-login-sees"><a class="anchor" href="#ch02-which-pages-each-staff-login-sees" aria-hidden="true">#</a>Which pages each staff login sees</h3>
+<div class="table-wrap"><table><thead><tr>
+<th>Menu</th>
+<th>Page</th>
+<th align="center">Admin / Principal</th>
+<th align="center">Accountant</th>
+<th align="center">Teacher</th>
+</tr>
+</thead><tbody><tr>
+<td>Overview</td>
+<td>Dashboard, My payslips, My leave</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td>Students</td>
+<td>Students (list)</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td>Students</td>
+<td>Attendance</td>
+<td align="center">✓</td>
+<td align="center"></td>
+<td align="center">✓ own sections</td>
+</tr>
+<tr>
+<td>Students</td>
+<td>Monthly attendance</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td>Students</td>
+<td>Promote students, Certificates, ID cards</td>
+<td align="center">✓</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>Academics</td>
+<td>My timetable</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td>Academics</td>
+<td>Timetable, Results</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td>Academics</td>
+<td>Homework &amp; diary, Marks entry</td>
+<td align="center">✓</td>
+<td align="center"></td>
+<td align="center">✓ own classes</td>
+</tr>
+<tr>
+<td>Academics</td>
+<td>Exams</td>
+<td align="center">✓</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>Fees</td>
+<td>All fee pages (collection, vouchers, families, transfer proofs, reminders, reports, setup)</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>Finance</td>
+<td>Payroll, Salaries, Salary advances, Expenses, Income &amp; spending</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>School</td>
+<td>Staff, Classes &amp; sections, Subjects, Holidays</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td>School</td>
+<td>Staff attendance by month</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>School</td>
+<td>Staff attendance, Staff leave, Academic years</td>
+<td align="center">✓</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>Administration</td>
+<td>Users, School profile, Audit log</td>
+<td align="center">✓</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table></div>
+<h3 id="ch02-admin-and-principal"><a class="anchor" href="#ch02-admin-and-principal" aria-hidden="true">#</a>Admin and Principal</h3>
+<p><figure><img src="images/principal.png" alt="Principal after login" loading="lazy"><figcaption>Principal after login</figcaption></figure></p>
+<p>Admin and Principal see the same full menu and start on the Dashboard. They run the whole school: students, exams,
+fees, payroll, staff, users and settings. Use Admin for the school owner or office head, and Principal for the head
+teacher.</p>
+<h3 id="ch02-accountant"><a class="anchor" href="#ch02-accountant" aria-hidden="true">#</a>Accountant</h3>
+<p><figure><img src="images/accountant.png" alt="Accountant after login" loading="lazy"><figcaption>Accountant after login</figcaption></figure></p>
+<p>The Accountant starts on the Dashboard and works mostly in Fees and Finance: collecting fees, making vouchers, checking
+transfer proofs, sending reminders, payroll and expenses. They can look at students, timetables and results, but
+cannot mark attendance, enter marks, or open Users and the Audit log.</p>
+<h3 id="ch02-teacher"><a class="anchor" href="#ch02-teacher" aria-hidden="true">#</a>Teacher</h3>
+<p><figure><img src="images/teacher.png" alt="Teacher after login" loading="lazy"><figcaption>Teacher after login</figcaption></figure></p>
+<p>The Teacher starts on the Dashboard. <strong>My timetable</strong> shows their own lessons for the week and today. They mark
+attendance, enter marks and post homework only for the classes and subjects given to them; other classes do not
+appear. They have no Fees, Finance or Administration menu. Every staff login, including teachers, can see their own
+payslips and ask for leave under Overview.</p>
+<h3 id="ch02-parent"><a class="anchor" href="#ch02-parent" aria-hidden="true">#</a>Parent</h3>
+<p>A parent goes straight to the Portal (<strong>My children</strong>) and sees only their own children. See
+<a href="#ch09">Parent Portal</a>. One parent login can cover brothers and sisters. If the children study at
+different branches of a School Group, the parent can switch between branches in the Portal.</p>
+<h3 id="ch02-owner-super-admin"><a class="anchor" href="#ch02-owner-super-admin" aria-hidden="true">#</a>Owner (Super Admin)</h3>
+<p><figure><img src="images/schools.png" alt="Owner after login" loading="lazy"><figcaption>Owner after login</figcaption></figure></p>
+<p>The Owner has no school of their own. They see only the <strong>Schools</strong> page, where they add schools, give each school its
+first Admin login, switch schools on or off, and make School Groups.</p>
+<h3 id="ch02-group-login-several-branches"><a class="anchor" href="#ch02-group-login-several-branches" aria-hidden="true">#</a>Group login (several branches)</h3>
+<p>A group login can be an Admin, Principal or Accountant of the whole group. After sign-in it opens the group pages
+(All branches, Fees across branches, Branch transfers; Group sign-ins for Admin only). Pick a branch at the top of the
+sidebar to work inside it with that role&#39;s normal menu. See <a href="#ch08">School Groups</a>.</p>
+<h3 id="ch02-good-practice"><a class="anchor" href="#ch02-good-practice" aria-hidden="true">#</a>Good practice</h3>
+<ul>
+<li>Give each person their own login. Do not share one login: the Audit log then shows who did what.</li>
+<li>When someone leaves, switch their login off in Users.</li>
+<li>Everyone must change the temporary password at first sign-in.</li>
+</ul>
+
+    <nav class="pager"><a href="#ch01" class="prev"><small>Previous chapter</small>Login and Dashboard</a><a href="#ch03" class="next"><small>Next chapter</small>Students</a></nav>
+  </section>
+
+  <section class="page chapter" id="ch03" data-title="Chapter 3 · Students">
+    <div class="chapter-head"><div class="label">Chapter 3</div><h2>Students</h2></div>
+    <h3 id="ch03-student-list"><a class="anchor" href="#ch03-student-list" aria-hidden="true">#</a>Student list</h3>
+<p><figure><img src="images/students.png" alt="Students list" loading="lazy"><figcaption>Students list</figcaption></figure></p>
+<p>Open <strong>Students → Students</strong>. You see every student with Adm. No., Name, Class, Roll, Guardian, Phone, Admitted date
+and Status.</p>
+<ul>
+<li>Search by name, admission no., guardian or phone. Use <strong>Class / section</strong> and <strong>Status</strong> (Active, Left, Struck off)
+to narrow the list.</li>
+<li>Click a column heading to sort the list by that column.</li>
+<li><strong>Saved views:</strong> save filters you use often. Admin and Principal can share them with other staff.</li>
+<li>The <strong>Excel</strong> button downloads the list as an Excel file.</li>
+</ul>
+<h3 id="ch03-admit-a-new-student"><a class="anchor" href="#ch03-admit-a-new-student" aria-hidden="true">#</a>Admit a new student</h3>
+<p><figure><img src="images/student-new.png" alt="Admit student form" loading="lazy"><figcaption>Admit student form</figcaption></figure></p>
+<ol>
+<li>In Students, click <strong>Admit student</strong>.</li>
+<li><strong>Admission:</strong> leave Admission no. empty and the next number is used (for example 2026-0007). Fill in Admission
+date, Class / section and Roll no.</li>
+<li><strong>Student:</strong> name, Gender, Date of birth, B-Form no. and Blood group. Click <strong>Upload</strong> to add a photo; the app crops
+it to passport size.</li>
+<li><strong>Guardian:</strong> name, Relation, Phone and Address. Type the phone number carefully: fee reminders and absence SMS go
+to this number.</li>
+<li>If this phone already belongs to a family, the app asks if the child should join that family (for example F-12).</li>
+<li>Click <strong>Save</strong>.</li>
+</ol>
+<h3 id="ch03-add-many-students-from-excel-import-from-excel"><a class="anchor" href="#ch03-add-many-students-from-excel-import-from-excel" aria-hidden="true">#</a>Add many students from Excel (Import from Excel)</h3>
+<p><figure><img src="images/student-import.png" alt="Import from Excel" loading="lazy"><figcaption>Import from Excel</figcaption></figure></p>
+<ol>
+<li>In Students, click <strong>Import from Excel</strong> and download the <strong>Template</strong>. Its Classes sheet lists the exact class
+names of your school.</li>
+<li>Fill in the template and upload it (.xlsx or .csv).</li>
+<li>The <strong>Preview</strong> checks every row. Problems like a wrong date, a repeated row or a full class are shown in red.</li>
+<li>Fix the problems, or skip the bad rows and import the rest.</li>
+</ol>
+<h3 id="ch03-a-students-page"><a class="anchor" href="#ch03-a-students-page" aria-hidden="true">#</a>A student&#39;s page</h3>
+<p><figure><img src="images/student-detail.png" alt="Student page" loading="lazy"><figcaption>Student page</figcaption></figure></p>
+<p>Click a student in the list to open their full record. Change any detail and click <strong>Save</strong>. Buttons at the top:</p>
+<ul>
+<li><strong>Strike off:</strong> remove a student who does not pay or stops coming. When they come back, <strong>Readmit</strong> them; a
+readmission fee can be charged.</li>
+<li><strong>ID card:</strong> make this student&#39;s ID card.</li>
+<li><strong>Issue certificate:</strong> School Leaving, Character or Bonafide certificate.</li>
+<li><strong>Audit log:</strong> who changed what in this record, and when.</li>
+</ul>
+<p>The parent&#39;s <strong>Portal login</strong> is also made from this page. The guardian&#39;s mobile number becomes the username, and the
+app gives a temporary password. The parent must change it at first login. One login can be linked to brothers and
+sisters.</p>
+<h3 id="ch03-id-cards"><a class="anchor" href="#ch03-id-cards" aria-hidden="true">#</a>ID Cards</h3>
+<p><figure><img src="images/id-cards.png" alt="ID cards" loading="lazy"><figcaption>ID cards</figcaption></figure></p>
+<p>Open <strong>Students → ID cards</strong>. Choose a class, tick the students and click <strong>Print</strong>. Ten cards fit on one A4 page. Each
+card has the photo, blood group, school logo and a QR code. Staff cards are made here too.</p>
+
+    <nav class="pager"><a href="#ch02" class="prev"><small>Previous chapter</small>Different Logins</a><a href="#ch04" class="next"><small>Next chapter</small>Attendance and Holidays</a></nav>
+  </section>
+
+  <section class="page chapter" id="ch04" data-title="Chapter 4 · Attendance and Holidays">
+    <div class="chapter-head"><div class="label">Chapter 4</div><h2>Attendance and Holidays</h2></div>
+    <h3 id="ch04-daily-student-attendance"><a class="anchor" href="#ch04-daily-student-attendance" aria-hidden="true">#</a>Daily student attendance</h3>
+<p><figure><img src="images/attendance.png" alt="Attendance" loading="lazy"><figcaption>Attendance</figcaption></figure></p>
+<ol>
+<li>Open <strong>Students → Attendance</strong>.</li>
+<li>Choose the <strong>Class / section</strong> and the <strong>Date</strong>. All students of that section appear.</li>
+<li>Mark each student Present, Absent, Late or Leave, then click <strong>Save</strong>.</li>
+</ol>
+<p>Parents of absent students get an SMS 15 minutes later. If you correct a mistake before then, no SMS is sent. A
+teacher can mark only their own sections. Attendance cannot be taken on a holiday.</p>
+<h3 id="ch04-monthly-attendance"><a class="anchor" href="#ch04-monthly-attendance" aria-hidden="true">#</a>Monthly attendance</h3>
+<p><figure><img src="images/attendance-monthly.png" alt="Monthly attendance" loading="lazy"><figcaption>Monthly attendance</figcaption></figure></p>
+<p><strong>Students → Monthly attendance</strong> shows one section&#39;s whole month in a grid, with each student&#39;s total present and
+absent days. You can download it as Excel.</p>
+<h3 id="ch04-staff-attendance"><a class="anchor" href="#ch04-staff-attendance" aria-hidden="true">#</a>Staff attendance</h3>
+<p><figure><img src="images/staff-attendance.png" alt="Staff attendance" loading="lazy"><figcaption>Staff attendance</figcaption></figure></p>
+<p>In <strong>School → Staff attendance</strong>, mark staff Present, Absent, Half day or Leave each day. Absent and Half day without
+approved leave are cut from pay in Payroll automatically (Absent = 1 day, Half day = half a day).
+<strong>Staff attendance by month</strong> shows the month&#39;s summary.</p>
+<h3 id="ch04-staff-leave"><a class="anchor" href="#ch04-staff-leave" aria-hidden="true">#</a>Staff leave</h3>
+<p><figure><img src="images/leave.png" alt="Staff leave" loading="lazy"><figcaption>Staff leave</figcaption></figure></p>
+<p>In <strong>School → Staff leave</strong>, approve or reject leave requests. Each year staff get Casual 10 and Sick 10 days.
+<em>Without pay</em> leave has no limit, but those days are cut from pay. Staff can send their own request from <strong>My leave</strong>.</p>
+<h3 id="ch04-holidays"><a class="anchor" href="#ch04-holidays" aria-hidden="true">#</a>Holidays</h3>
+<p><figure><img src="images/holidays.png" alt="Holidays" loading="lazy"><figcaption>Holidays</figcaption></figure></p>
+<p>In <strong>School → Holidays</strong>, enter the days the school is closed. No attendance is taken on those days, and staff lose no
+pay.</p>
+<ul>
+<li><strong>Add national holidays:</strong> adds the 7 fixed national holidays (like Labour Day, Independence Day, Quaid-e-Azam Day)
+in one click. Eid and Muharram dates change each year, so add them yourself with <strong>Add holiday</strong>.</li>
+<li><strong>Text parents:</strong> send an SMS about the holiday to all parents. The app offers this by itself when you add a holiday
+that starts within 7 days.</li>
+<li>If an exam paper, fee due date or homework due date falls on a holiday, the app warns you.</li>
+</ul>
+
+    <nav class="pager"><a href="#ch03" class="prev"><small>Previous chapter</small>Students</a><a href="#ch05" class="next"><small>Next chapter</small>Fees</a></nav>
+  </section>
+
+  <section class="page chapter" id="ch05" data-title="Chapter 5 · Fees">
+    <div class="chapter-head"><div class="label">Chapter 5</div><h2>Fees</h2></div>
+    <p>The usual monthly order is: set fees once (<strong>Fee setup</strong>) → make the month&#39;s vouchers → take payments at the counter
+or from transfer proofs → send reminders to those who have not paid.</p>
+<h3 id="ch05-fee-setup"><a class="anchor" href="#ch05-fee-setup" aria-hidden="true">#</a>Fee setup</h3>
+<p><figure><img src="images/fee-setup.png" alt="Fee setup" loading="lazy"><figcaption>Fee setup</figcaption></figure></p>
+<p>Open <strong>Fees → Fee setup</strong>. It has three tabs:</p>
+<ul>
+<li><strong>Fee heads:</strong> the kinds of fee, like Tuition (monthly), Computer (monthly) or Admission (one-time).</li>
+<li><strong>Fee structure:</strong> how much each class pays for each head in the academic year. Leave a box empty if a class does
+not pay that head. Click <strong>Save fees</strong>. New amounts apply only to vouchers made after saving.</li>
+<li><strong>Sibling discount:</strong> younger brothers and sisters pay less. For example, the 2nd child gets 20% off tuition. If a
+child also has their own concession, the bigger one is used, not both.</li>
+</ul>
+<h3 id="ch05-fee-vouchers"><a class="anchor" href="#ch05-fee-vouchers" aria-hidden="true">#</a>Fee vouchers</h3>
+<p><figure><img src="images/vouchers.png" alt="Fee vouchers" loading="lazy"><figcaption>Fee vouchers</figcaption></figure></p>
+<p><strong>Fees → Fee vouchers</strong> shows one month&#39;s vouchers. The cards at the top show the number of Vouchers, Billed,
+Collected and Outstanding. Each row shows the voucher no., student, due date, payable, paid, balance and status (like
+Paid, Unpaid or Cancelled). Tick several vouchers to cancel them together or send reminders to them. <strong>Print these</strong>
+prints the vouchers in the list.</p>
+<h3 id="ch05-make-the-months-vouchers-generate-vouchers"><a class="anchor" href="#ch05-make-the-months-vouchers-generate-vouchers" aria-hidden="true">#</a>Make the month&#39;s vouchers (Generate vouchers)</h3>
+<p><figure><img src="images/voucher-generate.png" alt="Generate vouchers" loading="lazy"><figcaption>Generate vouchers</figcaption></figure></p>
+<ol>
+<li>In Fee vouchers, click <strong>Generate vouchers</strong>.</li>
+<li>Choose the <strong>Month to bill</strong> and the <strong>Students</strong> (whole school or one class).</li>
+<li>Tick the fee heads to bill. Monthly heads are ticked already.</li>
+<li>Enter the <strong>Issue date</strong>, <strong>Due date</strong> and <strong>Late fine</strong>. If the due date is not a school day, the app suggests the
+next school day.</li>
+<li>Click <strong>Generate</strong>. Students who already have a voucher for that month are skipped, so it is safe to run again after
+new admissions.</li>
+</ol>
+<p><strong>Family vouchers</strong> prints all brothers&#39; and sisters&#39; vouchers of one family on one slip.</p>
+<h3 id="ch05-take-a-payment-at-the-counter-fee-collection"><a class="anchor" href="#ch05-take-a-payment-at-the-counter-fee-collection" aria-hidden="true">#</a>Take a payment at the counter (Fee collection)</h3>
+<p><figure><img src="images/collect.png" alt="Fee collection" loading="lazy"><figcaption>Fee collection</figcaption></figure></p>
+<ol>
+<li>Open <strong>Fees → Fee collection</strong>.</li>
+<li>Type the voucher no. printed on the slip, the admission no., the student&#39;s name or the family no. (like F-12), then
+press Enter.</li>
+<li>Pick the voucher. The right side shows what is due today, including any late fine.</li>
+<li>Enter the amount received and save. Print the receipt.</li>
+</ol>
+<p>If you type a family no., one payment is shared across all the children&#39;s vouchers, oldest due first. The family gets
+one receipt (like FR-7).</p>
+<h3 id="ch05-families"><a class="anchor" href="#ch05-families" aria-hidden="true">#</a>Families</h3>
+<p><figure><img src="images/families.png" alt="Families" loading="lazy"><figcaption>Families</figcaption></figure></p>
+<p><strong>Fees → Families</strong> groups brothers and sisters. Click <strong>Find brothers and sisters</strong>: the app suggests children who
+share the same guardian mobile number. Each family gets a number like F-12. <strong>Statement</strong> prints a family&#39;s full fee
+record for the year.</p>
+<h3 id="ch05-transfer-proofs"><a class="anchor" href="#ch05-transfer-proofs" aria-hidden="true">#</a>Transfer proofs</h3>
+<p><figure><img src="images/payment-proofs.png" alt="Transfer proofs" loading="lazy"><figcaption>Transfer proofs</figcaption></figure></p>
+<p>Many parents pay by bank transfer, JazzCash or Easypaisa. They send the transaction ID and a photo of the receipt from
+the Portal. In <strong>Fees → Transfer proofs</strong>:</p>
+<ul>
+<li><strong>Approve:</strong> the payment is saved on the voucher, with the transaction ID as the reference.</li>
+<li><strong>Reject:</strong> write the reason; the parent sees it.</li>
+</ul>
+<p>The parent gets an SMS either way. A red badge in the menu shows how many proofs are waiting. The school&#39;s bank and
+wallet accounts are entered by the Admin or Principal.</p>
+<h3 id="ch05-fee-reminders"><a class="anchor" href="#ch05-fee-reminders" aria-hidden="true">#</a>Fee reminders</h3>
+<p><figure><img src="images/reminders.png" alt="Fee reminders" loading="lazy"><figcaption>Fee reminders</figcaption></figure></p>
+<p><strong>Fees → Fee reminders</strong> sends an SMS or WhatsApp message to parents who still owe fees. Check the preview first, then
+send. Children of one family are joined into one message, so a parent does not get several texts.</p>
+<h3 id="ch05-fee-reports"><a class="anchor" href="#ch05-fee-reports" aria-hidden="true">#</a>Fee reports</h3>
+<p><figure><img src="images/fee-reports.png" alt="Fee reports" loading="lazy"><figcaption>Fee reports</figcaption></figure></p>
+<p><strong>Fees → Fee reports</strong> has two tabs. <strong>Collections</strong> lists every payment between two dates (From, To), with totals for
+cash and online, and can be filtered by Method. <strong>Defaulters</strong> lists students who owe fees; you can filter by how many
+months are unpaid, and managers can <strong>Strike off</strong> several defaulters at once. Use <strong>Excel</strong> or <strong>Print</strong> at the top
+to download or print a report.</p>
+
+    <nav class="pager"><a href="#ch04" class="prev"><small>Previous chapter</small>Attendance and Holidays</a><a href="#ch06" class="next"><small>Next chapter</small>Exams, Timetable, Homework, Certificates and Promotion</a></nav>
+  </section>
+
+  <section class="page chapter" id="ch06" data-title="Chapter 6 · Exams, Timetable, Homework, Certificates and Promotion">
+    <div class="chapter-head"><div class="label">Chapter 6</div><h2>Exams, Timetable, Homework, Certificates and Promotion</h2></div>
+    <h3 id="ch06-exams"><a class="anchor" href="#ch06-exams" aria-hidden="true">#</a>Exams</h3>
+<p><figure><img src="images/exams.png" alt="Exams" loading="lazy"><figcaption>Exams</figcaption></figure></p>
+<p>Open <strong>Academics → Exams</strong>.</p>
+<ol>
+<li>Click <strong>New exam</strong> and enter its name and dates (for example Mid Term, 05–15 Oct).</li>
+<li>Click <strong>Papers</strong> to add each subject&#39;s paper with its date and total marks.</li>
+<li>Click <strong>Marks</strong> to enter marks (or use Marks entry, below).</li>
+<li>When all marks are in, click <strong>Publish</strong>. Results and report cards can then be seen by staff and by parents in the
+Portal.</li>
+</ol>
+<p>The <strong>Grading scale</strong> tab sets the grades (A+, A, B and so on) by percentage.</p>
+<h3 id="ch06-marks-entry"><a class="anchor" href="#ch06-marks-entry" aria-hidden="true">#</a>Marks entry</h3>
+<p><figure><img src="images/marks.png" alt="Marks entry" loading="lazy"><figcaption>Marks entry</figcaption></figure></p>
+<p><strong>Academics → Marks entry:</strong> choose the exam, class and subject, then type each student&#39;s marks and save. A teacher
+sees only their own classes and subjects.</p>
+<h3 id="ch06-results-and-report-cards"><a class="anchor" href="#ch06-results-and-report-cards" aria-hidden="true">#</a>Results and report cards</h3>
+<p><figure><img src="images/results.png" alt="Results" loading="lazy"><figcaption>Results</figcaption></figure></p>
+<p><strong>Academics → Results</strong> shows each student&#39;s total, percentage, grade and position in the class. From here you can
+print report cards for the whole class.</p>
+<h3 id="ch06-timetable"><a class="anchor" href="#ch06-timetable" aria-hidden="true">#</a>Timetable</h3>
+<p><figure><img src="images/timetable.png" alt="Timetable" loading="lazy"><figcaption>Timetable</figcaption></figure></p>
+<p><strong>Academics → Timetable</strong> has four tabs:</p>
+<ul>
+<li><strong>Bell schedule:</strong> set the periods and break times first.</li>
+<li><strong>Class timetable:</strong> choose a class / section, then click a box to set the subject and teacher for that period. The
+app warns you if a teacher is already busy in another class at that time.</li>
+<li><strong>Teacher timetable:</strong> one teacher&#39;s whole week.</li>
+<li><strong>Workload:</strong> how many periods each teacher has.</li>
+</ul>
+<p>Click <strong>Print</strong> to print a timetable. Teachers see their own timetable in <strong>My timetable</strong>.</p>
+<h3 id="ch06-homework-and-diary"><a class="anchor" href="#ch06-homework-and-diary" aria-hidden="true">#</a>Homework and diary</h3>
+<p><figure><img src="images/diary.png" alt="Homework and diary" loading="lazy"><figcaption>Homework and diary</figcaption></figure></p>
+<p><strong>Academics → Homework &amp; diary:</strong> choose a section and date, write the homework for each subject, and set a due date.
+Parents see it in the Portal&#39;s Homework tab. Teachers can post only for their own classes.</p>
+<h3 id="ch06-certificates"><a class="anchor" href="#ch06-certificates" aria-hidden="true">#</a>Certificates</h3>
+<p><figure><img src="images/certificates.png" alt="Certificates" loading="lazy"><figcaption>Certificates</figcaption></figure></p>
+<p><strong>Students → Certificates</strong> lists the certificates already issued. To make a new one, open the student&#39;s page and
+click <strong>Issue certificate</strong>. Choose School Leaving, Character or Bonafide, check the details and print. Each
+certificate gets its own number and keeps the details as they were on the day it was issued.</p>
+<h3 id="ch06-promote-students-end-of-the-year"><a class="anchor" href="#ch06-promote-students-end-of-the-year" aria-hidden="true">#</a>Promote students (end of the year)</h3>
+<p><figure><img src="images/promotion.png" alt="Promote students" loading="lazy"><figcaption>Promote students</figcaption></figure></p>
+<ol>
+<li>First go to <strong>School → Academic years</strong>, create the new year and make it current.</li>
+<li>Open <strong>Students → Promote students</strong>.</li>
+<li>Choose the <strong>From year</strong>, the <strong>Class / section</strong>, and the exam whose results decide promotion.</li>
+<li>For each student choose <strong>Promote</strong>, <strong>Repeat class</strong>, <strong>Graduate</strong> or <strong>Leaves school</strong>. For Promote and Repeat
+class, pick the new section. Then save.</li>
+</ol>
+<p>Last year&#39;s results and report cards stay as they were.</p>
+
+    <nav class="pager"><a href="#ch05" class="prev"><small>Previous chapter</small>Fees</a><a href="#ch07" class="next"><small>Next chapter</small>Staff, Payroll and Expenses</a></nav>
+  </section>
+
+  <section class="page chapter" id="ch07" data-title="Chapter 7 · Staff, Payroll and Expenses">
+    <div class="chapter-head"><div class="label">Chapter 7</div><h2>Staff, Payroll and Expenses</h2></div>
+    <h3 id="ch07-staff"><a class="anchor" href="#ch07-staff" aria-hidden="true">#</a>Staff</h3>
+<p><figure><img src="images/staff.png" alt="Staff" loading="lazy"><figcaption>Staff</figcaption></figure></p>
+<p>Open <strong>School → Staff</strong>. It lists everyone who works at the school: teachers and other staff (like accountant, guard or
+driver).</p>
+<ul>
+<li><strong>Add staff:</strong> name, designation, type (Teaching or Non-teaching), phone, joining date and photo.</li>
+<li><strong>Salary:</strong> set the person&#39;s basic pay and allowances. Payroll uses these amounts every month.</li>
+<li><strong>Edit:</strong> change details, or mark the person inactive when they leave.</li>
+<li>A staff member who needs to use the app gets a login from <strong>Administration → Users</strong>; the list then shows their
+sign-in name.</li>
+</ul>
+<h3 id="ch07-payroll-monthly-payslips"><a class="anchor" href="#ch07-payroll-monthly-payslips" aria-hidden="true">#</a>Payroll (monthly payslips)</h3>
+<p><figure><img src="images/payroll.png" alt="Payroll" loading="lazy"><figcaption>Payroll</figcaption></figure></p>
+<ol>
+<li>Open <strong>Finance → Payroll</strong> and choose the month.</li>
+<li>Click <strong>Generate payslips</strong>. Each payslip uses the person&#39;s salary, cuts absent days (if you choose that), and takes
+back salary advance instalments.</li>
+<li>Check the list: Gross, Deductions, Net pay, Paid and Balance.</li>
+<li>Mark a payslip paid when the salary is given. <strong>Print slips</strong> prints the payslips.</li>
+</ol>
+<p>The cards at the top show the month&#39;s payslips, net pay, amount paid and amount still to pay. Staff can see their own
+payslips in <strong>My payslips</strong>.</p>
+<h3 id="ch07-salary-advances"><a class="anchor" href="#ch07-salary-advances" aria-hidden="true">#</a>Salary advances</h3>
+<p><strong>Finance → Salary advances:</strong> record money given to staff before payday, and how much to take back each month.
+Payroll takes it back by itself.</p>
+<h3 id="ch07-expenses"><a class="anchor" href="#ch07-expenses" aria-hidden="true">#</a>Expenses</h3>
+<p><figure><img src="images/expenses.png" alt="Expenses" loading="lazy"><figcaption>Expenses</figcaption></figure></p>
+<p><strong>Finance → Expenses:</strong> record the school&#39;s spending, like electricity, rent, repairs or stationery. Choose a
+category, enter the amount and date, and attach the bill if you have it.</p>
+<h3 id="ch07-income-and-spending"><a class="anchor" href="#ch07-income-and-spending" aria-hidden="true">#</a>Income and spending</h3>
+<p><figure><img src="images/finance.png" alt="Income and spending" loading="lazy"><figcaption>Income and spending</figcaption></figure></p>
+<p><strong>Finance → Income &amp; spending</strong> puts fee income next to salaries and expenses, month by month, so you can see whether
+the school is making or losing money.</p>
+
+    <nav class="pager"><a href="#ch06" class="prev"><small>Previous chapter</small>Exams, Timetable, Homework, Certificates and Promotion</a><a href="#ch08" class="next"><small>Next chapter</small>School Groups (Branches) and Transfers</a></nav>
+  </section>
+
+  <section class="page chapter" id="ch08" data-title="Chapter 8 · School Groups (Branches) and Transfers">
+    <div class="chapter-head"><div class="label">Chapter 8</div><h2>School Groups (Branches) and Transfers</h2></div>
+    <p>An owner with several branches can join them in one <strong>School Group</strong>. The Owner (Super Admin) makes the group and puts
+the branches in it. Each branch still keeps its own students, fees and staff.</p>
+<h3 id="ch08-one-login-for-all-branches"><a class="anchor" href="#ch08-one-login-for-all-branches" aria-hidden="true">#</a>One login for all branches</h3>
+<p>A group login (Admin, Principal or Accountant of the group) first opens the group pages:</p>
+<ul>
+<li><strong>All branches:</strong> students, attendance and fees of every branch side by side.</li>
+<li><strong>Fees across branches:</strong> collections and defaulters of all branches together.</li>
+<li><strong>Group sign-ins:</strong> make group logins (for example a head office accountant). Admin only.</li>
+</ul>
+<p>To work inside one branch, pick it from the branch switcher at the top of the sidebar. The whole app then works for
+that branch. Pick the group again to go back.</p>
+<h3 id="ch08-move-a-student-or-staff-member-to-another-branch-branch-transfers"><a class="anchor" href="#ch08-move-a-student-or-staff-member-to-another-branch-branch-transfers" aria-hidden="true">#</a>Move a student or staff member to another branch (Branch transfers)</h3>
+<ol>
+<li>Open <strong>Branch transfers</strong> and click <strong>Move student</strong> or <strong>Move staff member</strong>.</li>
+<li>Choose the From branch, the person, the To branch, the date and (for a student) the new class / section.</li>
+<li>The app shows what the student still owes at the old branch. You must agree to leave these dues there, or clear
+them first.</li>
+<li>Click <strong>Move student</strong> (or <strong>Move staff member</strong>) to finish.</li>
+</ol>
+<p>What happens:</p>
+<ul>
+<li><strong>Student:</strong> the old record is marked Left, and a new record with a new admission no. is made at the new branch.
+Unpaid vouchers for months after the move are cancelled at the old branch. The photo is copied.</li>
+<li><strong>Parent login:</strong> the parent&#39;s Portal login moves with the child. If a brother or sister stays at the old branch,
+the parent can see both branches and switch between them in the Portal.</li>
+<li><strong>Staff:</strong> the old record becomes inactive and stops being a class teacher. Their login and salary move to the new
+branch. A teacher who still has lessons on the old branch&#39;s timetable cannot be moved until those lessons are given
+to someone else.</li>
+</ul>
+<p>The student&#39;s page at both branches shows a note about the transfer.</p>
+
+    <nav class="pager"><a href="#ch07" class="prev"><small>Previous chapter</small>Staff, Payroll and Expenses</a><a href="#ch09" class="next"><small>Next chapter</small>Parent Portal</a></nav>
+  </section>
+
+  <section class="page chapter" id="ch09" data-title="Chapter 9 · Parent Portal">
+    <div class="chapter-head"><div class="label">Chapter 9</div><h2>Parent Portal</h2></div>
+    <p>Parents sign in on the same login page with the username and password the school gives them (usually the guardian&#39;s
+mobile number). At first login they must choose a new password.</p>
+<h3 id="ch09-my-children"><a class="anchor" href="#ch09-my-children" aria-hidden="true">#</a>My children</h3>
+<p><figure><img src="images/portal-home.png" alt="Portal home" loading="lazy"><figcaption>Portal home</figcaption></figure></p>
+<p>The first page shows a card for each child: class, admission no., Fees due, Attendance (%) and Latest results.
+Upcoming holidays are listed below. If the family has children at other branches of the same group, a box shows them
+with an <strong>Open</strong> button to switch branch.</p>
+<h3 id="ch09-a-childs-page"><a class="anchor" href="#ch09-a-childs-page" aria-hidden="true">#</a>A child&#39;s page</h3>
+<p><figure><img src="images/portal-child.png" alt="Child&amp;#39;s page" loading="lazy"><figcaption>Child&amp;#39;s page</figcaption></figure></p>
+<p>Click a child&#39;s card to open their page. It has five tabs:</p>
+<ul>
+<li><strong>Fees:</strong> amount Due now and Paid so far, every month&#39;s voucher with its status, and past payments. Click
+<strong>Voucher</strong> to see or print it.</li>
+<li><strong>Attendance:</strong> the month&#39;s present, absent, late and leave days.</li>
+<li><strong>Homework:</strong> homework set by the teachers, with due dates.</li>
+<li><strong>Results:</strong> exam results and report cards (after the school publishes them).</li>
+<li><strong>Timetable:</strong> the class&#39;s weekly timetable.</li>
+</ul>
+<h3 id="ch09-paying-fees-by-bank-transfer-jazzcash-or-easypaisa"><a class="anchor" href="#ch09-paying-fees-by-bank-transfer-jazzcash-or-easypaisa" aria-hidden="true">#</a>Paying fees by bank transfer, JazzCash or Easypaisa</h3>
+<ol>
+<li>Pay the fee to one of the school&#39;s accounts (shown in the app).</li>
+<li>On the voucher, click <strong>I&#39;ve paid</strong>.</li>
+<li>Choose the account you paid into, type the transaction ID (TID) and upload a photo of the receipt.</li>
+<li>The school checks it. When it is approved, the voucher shows Paid and the parent gets an SMS. If it is rejected, the
+reason is shown.</li>
+</ol>
+<p>A parent with two or more children can use <strong>Pay for all your children</strong> to send one proof for all of them.
+<strong>Pay online</strong> appears only if the school has turned on an online payment gateway.</p>
+<h3 id="ch09-on-a-mobile-phone"><a class="anchor" href="#ch09-on-a-mobile-phone" aria-hidden="true">#</a>On a mobile phone</h3>
+<img src="images/portal-phone.png" alt="Portal on a phone" width="320">
+
+<p>The portal works on any phone browser. The menu folds away; tap the menu button at the top to open it.</p>
+
+    <nav class="pager"><a href="#ch08" class="prev"><small>Previous chapter</small>School Groups (Branches) and Transfers</a><a href="#ch10" class="next"><small>Next chapter</small>Users, Audit Log, School Setup and Common Questions</a></nav>
+  </section>
+
+  <section class="page chapter" id="ch10" data-title="Chapter 10 · Users, Audit Log, School Setup and Common Questions">
+    <div class="chapter-head"><div class="label">Chapter 10</div><h2>Users, Audit Log, School Setup and Common Questions</h2></div>
+    <h3 id="ch10-users"><a class="anchor" href="#ch10-users" aria-hidden="true">#</a>Users</h3>
+<p><figure><img src="images/users.png" alt="Users" loading="lazy"><figcaption>Users</figcaption></figure></p>
+<p><strong>Administration → Users</strong> is where the Admin or Principal makes logins for staff. Enter the name, username, role
+(Admin, Principal, Accountant or Teacher) and a password. A teacher&#39;s login is linked to their staff record so they see
+only their own classes. You can reset a password or switch a login off here. Parent logins are made from the student&#39;s
+page, not here.</p>
+<h3 id="ch10-audit-log"><a class="anchor" href="#ch10-audit-log" aria-hidden="true">#</a>Audit log</h3>
+<p><figure><img src="images/audit-log.png" alt="Audit log" loading="lazy"><figcaption>Audit log</figcaption></figure></p>
+<p><strong>Administration → Audit log</strong> records every change to fees, marks, students, staff and sign-ins: who did it, when,
+and the old and new values. Filter by date, Area, Changed by and Action, or search for a receipt, voucher or name.</p>
+<h3 id="ch10-school-setup"><a class="anchor" href="#ch10-school-setup" aria-hidden="true">#</a>School setup</h3>
+<p><figure><img src="images/school-profile.png" alt="School profile" loading="lazy"><figcaption>School profile</figcaption></figure></p>
+<p>Do these once when you start, and again at the start of each year:</p>
+<ol>
+<li><strong>Administration → School profile:</strong> school name, phone, email, address and logo. These are printed on vouchers,
+receipts, certificates and ID cards.</li>
+<li><strong>School → Academic years:</strong> add the year (for example 2026-27) and make it current.</li>
+<li><strong>School → Classes &amp; sections:</strong> add classes (Class 1, Class 2 …) and their sections (A, B) with how many students
+fit.</li>
+<li><strong>School → Subjects:</strong> add the subjects taught.</li>
+<li><strong>School → Staff</strong>, then <strong>Fees → Fee setup</strong>, then admit students.</li>
+</ol>
+<p><figure><img src="images/classes.png" alt="Classes and sections" loading="lazy"><figcaption>Classes and sections</figcaption></figure></p>
+<h3 id="ch10-schools-owner-only"><a class="anchor" href="#ch10-schools-owner-only" aria-hidden="true">#</a>Schools (Owner only)</h3>
+<p><figure><img src="images/schools.png" alt="Schools" loading="lazy"><figcaption>Schools</figcaption></figure></p>
+<p>The Owner (Super Admin) sees the <strong>Schools</strong> page. Here they add a new school with its first Admin login, switch a
+school on or off, and put branches into a School Group.</p>
+<h3 id="ch10-common-questions"><a class="anchor" href="#ch10-common-questions" aria-hidden="true">#</a>Common questions</h3>
+<ul>
+<li><strong>I forgot my password.</strong> Ask the Admin to reset it. Parents ask the school office.</li>
+<li><strong>A parent says they get no SMS.</strong> Check the guardian phone number on the student&#39;s page.</li>
+<li><strong>Can I change a fee after vouchers are made?</strong> Change it in Fee setup. Old vouchers keep their amounts; new vouchers
+use the new amount.</li>
+<li><strong>I made the vouchers twice.</strong> That is fine: a student who already has a voucher for that month is skipped.</li>
+<li><strong>A student was marked absent by mistake.</strong> Correct it within 15 minutes and the parent gets no SMS.</li>
+<li><strong>Who changed this record?</strong> Open the Audit log, or the Audit log button on the student&#39;s page.</li>
+<li><strong>Can I use it on my phone?</strong> Yes, every page works in a phone browser.</li>
+</ul>
+
+    <nav class="pager"><a href="#ch09" class="prev"><small>Previous chapter</small>Parent Portal</a><a href="#cover" class="next"><small>The end</small>Back to the start</a></nav>
+  </section>
+</main>
+</div>
+<div class="lightbox" id="lightbox"><img alt=""></div>
+<script>
+(function () {
+  var root = document.documentElement;
+  try { var t = localStorage.getItem('theme'); if (t) root.setAttribute('data-theme', t); } catch (e) {}
+  document.getElementById('themeBtn').onclick = function () {
+    var dark = root.getAttribute('data-theme') ? root.getAttribute('data-theme') === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    var next = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  };
+  document.getElementById('printBtn').onclick = function () { window.print(); };
+
+  var body = document.body;
+  document.getElementById('menuBtn').onclick = function () { body.classList.toggle('menu-open'); };
+  document.getElementById('scrim').onclick = function () { body.classList.remove('menu-open'); };
+  document.querySelectorAll('.side a').forEach(function (a) { a.addEventListener('click', function () { body.classList.remove('menu-open'); }); });
+
+  var lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
+  document.querySelectorAll('figure img').forEach(function (img) {
+    img.addEventListener('click', function () { lbImg.src = img.src; lbImg.alt = img.alt; lb.classList.add('show'); });
+  });
+  lb.onclick = function () { lb.classList.remove('show'); };
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') lb.classList.remove('show'); });
+
+  // Highlight where the reader is in the sidebar
+  var links = {};
+  document.querySelectorAll('.side a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+  var targets = Array.prototype.slice.call(document.querySelectorAll('section.page, section.page h3[id]'));
+  var where = document.getElementById('where'), bar = document.getElementById('progress'), current = null;
+  function update() {
+    var y = window.scrollY + 90, active = targets[0];
+    for (var i = 0; i < targets.length; i++) { if (targets[i].offsetTop <= y) active = targets[i]; else break; }
+    var max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.width = (max > 0 ? (scrollY / max) * 100 : 0) + '%';
+    if (active === current) return;
+    current = active;
+    var section = active.closest('section.page');
+    document.querySelectorAll('.side a.active').forEach(function (a) { a.classList.remove('active'); });
+    document.querySelectorAll('.side li.open').forEach(function (li) { li.classList.remove('open'); });
+    var chap = links[section.id];
+    if (chap) { chap.classList.add('active'); chap.parentElement.classList.add('open'); }
+    var sub = links[active.id];
+    if (sub && sub !== chap) sub.classList.add('active');
+    var vis = sub || chap;
+    if (vis && !body.classList.contains('menu-open')) {
+      var side = document.getElementById('side'), r = vis.getBoundingClientRect(), sr = side.getBoundingClientRect();
+      if (r.top < sr.top + 40 || r.bottom > sr.bottom - 40) side.scrollTop += r.top - sr.top - sr.height / 3;
+    }
+    where.textContent = section.getAttribute('data-title') || '';
+  }
+  addEventListener('scroll', update, { passive: true });
+  addEventListener('resize', update);
+  update();
+})();
+</script>
+</body>
+</html>

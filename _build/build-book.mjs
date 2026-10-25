@@ -1,4 +1,4 @@
-// Builds index.html: the whole user guide as one book page (cover, contents, every chapter).
+// Builds guide.html: the whole user guide as one book page (cover, contents, every chapter).
 // Run from the repo root:  node _build/build-book.mjs
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { Marked } from 'marked';
@@ -328,5 +328,5 @@ ${chapters.map(c => `  <section class="page chapter" id="${c.id}" data-title="Ch
 </html>
 `;
 
-writeFileSync(root + 'index.html', html);
-console.log(`index.html: ${chapters.length} chapters, ${totalImages} screenshots, ${(html.length / 1024).toFixed(0)} KB`);
+writeFileSync(root + 'guide.html', html);
+console.log(`guide.html: ${chapters.length} chapters, ${totalImages} screenshots, ${(html.length / 1024).toFixed(0)} KB`);
