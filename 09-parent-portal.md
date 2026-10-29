@@ -17,7 +17,7 @@ with an **Open** button to switch branch.
 
 ![Child's page](images/portal-child.png)
 
-Click a child's card to open their page. It has five tabs:
+Click a child's card to open their page. It has these tabs:
 
 - **Fees:** amount Due now and Paid so far, every month's voucher with its status, and past payments. Click
   **Voucher** to see or print it.
@@ -25,6 +25,9 @@ Click a child's card to open their page. It has five tabs:
 - **Homework:** homework set by the teachers, with due dates.
 - **Results:** exam results and report cards (after the school publishes them).
 - **Timetable:** the class's weekly timetable.
+- **Transport:** only for a child on school transport: route, stop, times, fee and the driver's number. See
+  [Transport](11-transport-library-notices.md#what-parents-see).
+- **Library:** only for a child who has borrowed library books: each book, its return date, and any fine.
 
 ## Paying fees by bank transfer, JazzCash or Easypaisa
 

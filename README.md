@@ -1,7 +1,5 @@
 # School ERP — User Guide
 
-📖 **Read it as a book:** https://saifullahafridi.github.io/SchoolERP_DOCS/ (every chapter on one page, with a chapter list on the side)
-
 School ERP is a web app that runs the whole school in one place: admissions, attendance, fees, exams, payroll and a
 portal for parents. You open it in a browser (Chrome or Edge) on a computer or a mobile phone.
 
@@ -20,6 +18,7 @@ in a School Group and see all branches with one login.
 8. [School Groups (Branches) and Transfers](08-school-groups.md)
 9. [Parent Portal](09-parent-portal.md)
 10. [Users, Audit Log, School Setup and Common Questions](10-settings-and-faq.md)
+11. [Transport, Library and Notice board](11-transport-library-notices.md) — vans and routes, lending books and fines, circulars for staff and parents
 
 New school? Start with [School setup](10-settings-and-faq.md#school-setup).
 
@@ -30,8 +29,8 @@ New school? Start with [School setup](10-settings-and-faq.md#school-setup).
 | Admin | Everything: students, staff, fees, users, settings, school bank accounts |
 | Principal | Same menu as Admin: students, attendance, exams, fees, payroll, users, reports |
 | Accountant | Fees, collection, vouchers, payroll, expenses and finance reports |
-| Teacher | Attendance, marks and homework for their own classes only |
-| Parent | Portal: their children's fees, attendance, results, timetable and homework; send proof of a fee payment |
+| Teacher | Attendance, marks and homework for their own classes only; lending library books |
+| Parent | Portal: their children's fees, attendance, results, timetable, homework, school van, library books and notices; send proof of a fee payment |
 | Owner (Super Admin) | Add new schools and school groups |
 
 See [Different logins](02-logins.md) for the full list of pages each role can open.

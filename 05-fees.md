@@ -11,7 +11,9 @@ or from transfer proofs → send reminders to those who have not paid.
 
 Open **Fees → Fee setup**. It has three tabs:
 
-- **Fee heads:** the kinds of fee, like Tuition (monthly), Computer (monthly) or Admission (one-time).
+- **Fee heads:** the kinds of fee, like Tuition (monthly), Computer (monthly) or Admission (one-time). The app adds
+  **Transport** with the first van route and **Library fine** with the first library fine (see
+  [Transport and Library](11-transport-library-notices.md)).
 - **Fee structure:** how much each class pays for each head in the academic year. Leave a box empty if a class does
   not pay that head. Click **Save fees**. New amounts apply only to vouchers made after saving.
 - **Sibling discount:** younger brothers and sisters pay less. For example, the 2nd child gets 20% off tuition. If a
