@@ -51,6 +51,37 @@ needs to improve handwriting". It is printed on the report card.
 
 ![Report card, Modern layout](images/report-card.png)
 
+When a class has more than one section, the report card also shows the student's **position in the class** across all
+its sections (for example 3rd of 64), besides the position in the section.
+
+## Date sheet
+
+![Date sheet](images/date-sheet.png)
+
+The date sheet is made from the exam's papers, so there is nothing extra to type. In **Academics → Exams**, click
+**Date sheet** on an exam (or the **Date sheet** button on Results). It opens a print page:
+
+- **Layout:** **All classes in one table** (dates down the side, one column for each class; printed landscape) or
+  **Class by class**.
+- **Note:** a line printed at the bottom, like "Timing 8:30 am – 11:30 am. Bring your admit card." It is not saved.
+- **English / اردو:** print it in Urdu if you like.
+
+Parents see the date sheet of every upcoming exam on the child's **Results** tab in the portal, and can print it.
+
+## Toppers
+
+![Toppers](images/toppers.png)
+
+**Academics → Toppers** lists the position holders of an exam:
+
+- **School toppers:** the best students of the whole school by percentage, so different classes can be compared.
+  Choose **Places in school** (top 3, 5, 10 …).
+- **Class toppers:** for each class, the best students across all its sections by total marks. Choose **Places per
+  class**.
+
+Students with the same marks share a position. **Print** makes a page for the notice board or prize day; **Excel**
+downloads the list.
+
 ## Board exams
 
 ![Board exams](images/board-exams.png)

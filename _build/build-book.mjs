@@ -89,7 +89,7 @@ const html = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SchoolERP User Guide</title>
-<meta name="description" content="How to use every screen of School ERP, in one book with screenshots.">
+<meta name="description" content="How to use every screen of MY School, in one book with screenshots.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>

@@ -153,4 +153,4 @@ each mobile number, even if a family has several children.
 
 ---
 
-Previous: [Users, Settings and Common Questions](10-settings-and-faq.md) · Back to the [User Guide](README.md)
+Previous: [Users, Settings and Common Questions](10-settings-and-faq.md) · Next: [For the platform owner](12-platform-owner.md)

@@ -63,8 +63,10 @@ different branches of a School Group, the parent can switch between branches in 
 
 ![Owner after login](images/schools.png)
 
-The Owner has no school of their own. They see only the **Schools** page, where they add schools, give each school its
-first Admin login, switch schools on or off, and make School Groups.
+The Owner has no school of their own. Their menu is **Schools**, **Integrations**, **Billing**, **Requests**,
+**Packages** and **Website**: they add schools, give each school its first Admin login, switch schools on or off, make
+School Groups, set each school's package and paid services, and bill the schools every month. See
+[For the platform owner](12-platform-owner.md).
 
 ## Group login (several branches)
 

@@ -79,7 +79,47 @@ the Portal. In **Fees → Transfer proofs**:
 - **Reject:** write the reason; the parent sees it.
 
 The parent gets an SMS either way. A red badge in the menu shows how many proofs are waiting. The school's bank and
-wallet accounts are entered by the Admin or Principal.
+wallet accounts are entered by the Admin or Principal with the **School accounts** button on this page.
+
+## Raast QR on vouchers
+
+![School accounts with a Raast QR](images/school-accounts.png)
+
+Raast lets a parent pay from any bank or wallet app by scanning a QR code, for free. Get the school's Raast QR from
+your bank (it is the QR the bank gives for the school's account or Raast ID), then:
+
+1. In **Fees → Transfer proofs**, click **School accounts** and add the account with the type **Raast** (or edit the
+   bank account the QR belongs to).
+2. Click **Add QR** and choose the picture of the bank's QR code.
+3. Tick **Print on fee vouchers**. Only one account can be on the vouchers.
+
+![Voucher with Pay by Raast](images/voucher-raast.png)
+
+Every printed voucher that still has something to pay now has a **Pay by Raast** box on the bank and parent copies:
+the QR code, the account number, and "Write V-123 in the purpose / remarks", with that voucher's own number. The
+parent portal shows the same QR when a parent chooses to pay by transfer. A parent who pays this way does not need to
+send a proof: the payment is found on the bank statement (next section).
+
+## Match the bank statement
+
+![Match bank statement](images/bank-statement.png)
+
+**Fees → Match bank statement** turns the money that came into the school's account into fee receipts, without
+typing them one by one.
+
+1. Download the account statement from internet banking as **Excel or CSV** and click **Upload statement**. The app finds
+   the heading row by itself; if it picks the wrong columns, fix them with **Columns**.
+2. Only money coming in (credits) is listed. For each line the app looks for the voucher: first "V-123" or
+   "Voucher 123" in the details, then the admission no., then the amount together with the student's full name. It
+   never matches on the amount alone.
+3. Check each match. Type a **Voucher no.** for a line the app could not match. In **Do**, choose **Record**,
+   **Leave** (it comes back next time you upload) or **Not a fee** (never shown again).
+4. Click **Record payments** (it says how many, like "Record 3 payments"). Each one is saved as a bank payment on its voucher. If the parent had already sent a
+   proof for the same voucher and amount, that proof is approved instead.
+
+Lines that were already recorded are skipped if the same statement is uploaded again. A payment bigger than what the
+voucher owes is refused, so the extra is not lost.
+
 
 ## Scholarships and installments
 

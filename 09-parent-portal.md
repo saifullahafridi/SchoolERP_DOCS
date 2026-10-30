@@ -23,7 +23,8 @@ Click a child's card to open their page. It has these tabs:
   **Voucher** to see or print it.
 - **Attendance:** the month's present, absent, late and leave days.
 - **Homework:** homework set by the teachers, with due dates.
-- **Results:** exam results and report cards (after the school publishes them).
+- **Results:** exam results and report cards (after the school publishes them), and the date sheet of every
+  upcoming exam, which can be printed.
 - **Timetable:** the class's weekly timetable.
 - **Transport:** only for a child on school transport: route, stop, times, fee and the driver's number. See
   [Transport](11-transport-library-notices.md#what-parents-see).
@@ -68,6 +69,17 @@ resolved** closes a conversation. **Message parents** lets staff start a convers
 every parent login of that child. A teacher can write only to parents in the sections whose attendance they mark.
 
 ![Parent messages at the school](images/parent-messages.png)
+
+## Urdu
+
+<img src="images/portal-urdu.png" alt="The portal in Urdu" width="320">
+
+The **اردو** button at the top of the portal shows the whole portal in Urdu, written right to left in Nastaliq: menus,
+fees, attendance, results, report cards and vouchers. Click **English** to go back. The app remembers the choice on
+that phone or computer.
+
+Staff pages stay in English. On print pages (fee vouchers, report cards, date sheets) staff can choose **English** or
+**اردو** in the toolbar before printing, for example to give a parent an Urdu voucher.
 
 ## On a mobile phone
 

@@ -87,6 +87,34 @@ The parent's **Portal login** is also made from this page. The guardian's mobile
 app gives a temporary password. The parent must change it at first login. One login can be linked to brothers and
 sisters.
 
+## Students at risk
+
+![Students at risk](images/early-warning.png)
+
+**Students → Students at risk** finds children who may drop out or fail, before it is too late. Every time the page
+opens, the app looks at each student's attendance, exam results and fees and gives points:
+
+- **2 points each:** attendance below the limit (75% to start with), absent several days in a row, failed an exam, or
+  a big drop in marks since the last exam.
+- **1 point each:** attendance falling compared with the weeks before, or fees unpaid for months.
+
+1–2 points is **Low**, 3–4 **Medium** and 5 or more **High** risk. Each student shows the reasons as small chips, and
+the counts at the top show how many are at each level. Choose a class / section or search by name.
+
+- **Call** and **WhatsApp** open the guardian's number on a phone.
+- **Follow up** writes what was done ("Spoke to the father, child was ill") and can hide the student for a week, two
+  weeks or a month. Tick **Show followed-up** to see them again; earlier follow-ups stay on the student.
+- **Rules** (Admin and Principal) changes the limits: how many days to look back, the attendance % that is too low,
+  how far it must fall, how many days absent in a row, how big a marks drop counts, and after how many months unpaid
+  fees count (0 ignores fees).
+- **Morning summary:** in Rules, tick **Send the principal a summary every school day**, choose the time and up to 3
+  mobile numbers. It goes by WhatsApp or SMS (as the school sends its automatic messages) and as an app
+  notification to Admin and Principal logins, only when someone is at medium or high risk. **Send summary now** sends
+  it straight away.
+
+The Admin and Principal see the whole school; a teacher sees only the sections where they are the class teacher. The
+Dashboard's **Needs attention** box shows how many students are at medium or high risk.
+
 ## ID Cards
 
 ![ID cards](images/id-cards.png)
