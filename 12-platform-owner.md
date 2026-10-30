@@ -61,9 +61,6 @@ On **Schools**, click **Services** on a school. Its page has:
 - **JazzCash** and **Easypaisa:** on or off, the school's own merchant details, the monthly fee and the charge per
   payment (a fixed amount and / or a % of the amount).
 
-A yellow line at the top says when the server is a **test server**: messages are recorded but never sent, and not
-charged.
-
 ## Integrations
 
 ![Owner: integrations](images/owner-integrations.png)
