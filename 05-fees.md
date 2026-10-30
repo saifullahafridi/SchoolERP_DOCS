@@ -12,8 +12,9 @@ or from transfer proofs → send reminders to those who have not paid.
 Open **Fees → Fee setup**. It has three tabs:
 
 - **Fee heads:** the kinds of fee, like Tuition (monthly), Computer (monthly) or Admission (one-time). The app adds
-  **Transport** with the first van route and **Library fine** with the first library fine (see
-  [Transport and Library](11-transport-library-notices.md)).
+  some heads by itself when first needed: **Transport** with the first van route, **Library fine** with the first
+  library fine (see [Transport and Library](11-transport-library-notices.md)), **Board fee** with the first board exam
+  and **Uniform & books** with the first sale charged to fees.
 - **Fee structure:** how much each class pays for each head in the academic year. Leave a box empty if a class does
   not pay that head. Click **Save fees**. New amounts apply only to vouchers made after saving.
 - **Sibling discount:** younger brothers and sisters pay less. For example, the 2nd child gets 20% off tuition. If a
@@ -39,6 +40,10 @@ prints the vouchers in the list.
    next school day.
 5. Click **Generate**. Students who already have a voucher for that month are skipped, so it is safe to run again after
    new admissions.
+
+Some charges go on the voucher by themselves even if their head is not ticked: an installment part due that month, an
+unpaid board fee, library fines and uniform or book sales charged to fees. Approved scholarships lower the fee.
+If a voucher is cancelled, these charges go on the next voucher made for the student.
 
 **Family vouchers** prints all brothers' and sisters' vouchers of one family on one slip.
 
@@ -76,12 +81,83 @@ the Portal. In **Fees → Transfer proofs**:
 The parent gets an SMS either way. A red badge in the menu shows how many proofs are waiting. The school's bank and
 wallet accounts are entered by the Admin or Principal.
 
+## Scholarships and installments
+
+Open **Fees → Scholarships & installments**. Both are used when the month's vouchers are generated.
+
+![Scholarships](images/scholarships.png)
+
+**Scholarships**
+
+1. Click **New scholarship** and pick the student.
+2. Choose the **Kind** (Merit, Need based, Sports, Hafiz-e-Quran, Orphan, Staff child or Other), the **Fee** it lowers
+   (for example Tuition), and either a **Percent** off or a **Fixed amount** a month.
+3. Enter the **From month**, and the **To month** if it ends (empty = until stopped), and the **Reason**.
+4. Click **Ask for approval**. The Accountant can ask; only the Admin or Principal can **Approve** or **Refuse**.
+
+An approved scholarship lowers every voucher from its first month. If the student also has a concession or a sibling
+discount on the same fee, the bigger one is used, not both. **End** stops a scholarship: enter the last month it
+applies.
+
+![Installment plans](images/installments.png)
+
+**Installment plans** split a big fee, like the admission fee, into parts over several months.
+
+1. On the **Installment plans** tab click **New plan** and pick the student.
+2. Choose the **Fee**. The **Total** is filled in from the class's fee (less any concession); change it if needed.
+3. Enter the number of **Parts** (2 to 12) and the **First month**. The app divides the total into monthly parts;
+   change any part's month or amount if the parent agreed otherwise. The total of the parts is shown below them.
+4. Click **Save plan**.
+
+Each part goes on the voucher of its month, named like "Admission (2 of 4)", even if the fee head is not ticked when
+generating. The plan card shows which parts are on which voucher and which are not billed yet. **Change** edits the
+parts that are not on a voucher yet.
+
+## Uniform & books
+
+![Uniform & books](images/shop.png)
+
+Schools that sell uniforms, books and stationery keep the stock and the sales in **Fees → Uniform & books** (Admin,
+Principal and Accountant). It has three tabs.
+
+**Stock:** click **Add item** for each thing you sell. Make one item per size (for example "Shirt, size 24") with its
+**Price**, and set **Warn when stock is at or below**. Then:
+
+- **Receive** when a delivery comes in: the pieces received, the cost per piece and the supplier (optional).
+- **Count** when you count the shelf: enter the pieces there now and say why it differs (damaged, lost).
+- **History** lists every change: received, sold, returned on a cancelled sale, counted.
+
+Items running low show in red, and the Stock tab shows how many are low. An item that was ever stocked cannot be
+deleted; untick **For sale** to hide it instead.
+
+**Sell:**
+
+1. Choose **Student** and pick the student, or **Walk-in (cash)** for someone else (the buyer's name is optional).
+2. Tap the items on the left. Tap again to add one more, or change the quantity in the sale. The app does not let you
+   sell more than is in stock.
+3. For a student, choose how it is paid:
+   - **Next fee voucher:** the sale goes on the next voucher generated, as "Uniform & books (S-12)".
+   - **Add to unpaid voucher now:** pick one of the student's unpaid vouchers; the sale is added to it straight away.
+   - **Cash now:** paid at the counter.
+4. Click **Take** (cash) or **Charge**. A slip opens to print.
+
+**Sales:** every sale between two dates, with the number of sales and the totals in cash and on fees. Each row shows
+how it is paid ("Paid in cash", "Next fee voucher", "On voucher 123"). **Slip** prints it again. **Cancel** (with a
+reason) puts the pieces back on the shelf. A sale that is already on a voucher can only be cancelled after cancelling
+that voucher.
+
 ## Fee reminders
 
 ![Fee reminders](images/reminders.png)
 
 **Fees → Fee reminders** sends an SMS or WhatsApp message to parents who still owe fees. Check the preview first, then
 send. Children of one family are joined into one message, so a parent does not get several texts.
+
+Choose how to send: **SMS**, **WhatsApp**, or **WhatsApp, then SMS** (the choices depend on the message service the
+school has set up). With the last one each reminder goes by WhatsApp first; if WhatsApp cannot deliver it (the number
+is not on WhatsApp, or WhatsApp refuses it), the same text goes by SMS. The **Message** tab changes the wording, and the
+**History** tab shows each message and how it went. The **WhatsApp** button next to a parent opens WhatsApp on this
+computer or phone with the message typed in, ready to send yourself.
 
 ## Fee reports
 

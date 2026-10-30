@@ -10,13 +10,13 @@ in a School Group and see all branches with one login.
 
 1. [Login and Dashboard](01-login-and-dashboard.md)
 2. [Different logins](02-logins.md) — what each role sees
-3. [Students](03-students.md) — admission, import from Excel, student page, ID cards
-4. [Attendance and Holidays](04-attendance-and-holidays.md) — students, staff, leave, holidays
-5. [Fees](05-fees.md) — setup, vouchers, collection, families, transfer proofs, reminders, reports
-6. [Exams, Timetable, Homework, Certificates and Promotion](06-academics.md)
+3. [Students](03-students.md) — admission enquiries, admission, import from Excel, student page, ID cards
+4. [Attendance and Holidays](04-attendance-and-holidays.md) — students, ID card scanning, fingerprint machines, staff, leave, holidays
+5. [Fees](05-fees.md) — setup, vouchers, collection, families, scholarships and installments, uniform and book sales, transfer proofs, reminders (SMS / WhatsApp), reports
+6. [Exams, Timetable, Homework, Certificates and Promotion](06-academics.md) — also report card design, result analysis, board exams, syllabus and lesson plans
 7. [Staff, Payroll and Expenses](07-staff-payroll-expenses.md)
 8. [School Groups (Branches) and Transfers](08-school-groups.md)
-9. [Parent Portal](09-parent-portal.md)
+9. [Parent Portal](09-parent-portal.md) — also messages and complaints, installing the app and notifications
 10. [Users, Audit Log, School Setup and Common Questions](10-settings-and-faq.md)
 11. [Transport, Library and Notice board](11-transport-library-notices.md) — vans and routes, lending books and fines, circulars for staff and parents
 
@@ -28,9 +28,9 @@ New school? Start with [School setup](10-settings-and-faq.md#school-setup).
 | --- | --- |
 | Admin | Everything: students, staff, fees, users, settings, school bank accounts |
 | Principal | Same menu as Admin: students, attendance, exams, fees, payroll, users, reports |
-| Accountant | Fees, collection, vouchers, payroll, expenses and finance reports |
-| Teacher | Attendance, marks and homework for their own classes only; lending library books |
-| Parent | Portal: their children's fees, attendance, results, timetable, homework, school van, library books and notices; send proof of a fee payment |
+| Accountant | Fees, collection, vouchers, scholarships, installments, uniform and book sales, admission enquiries, payroll, expenses and finance reports |
+| Teacher | Attendance, marks, homework, syllabus and lesson plans for their own classes only; scanning ID cards; lending library books; answering parents' messages |
+| Parent | Portal: their children's fees, attendance, results, board exams, timetable, homework, school van, library books and notices; send proof of a fee payment; write to the school; install the app for notifications |
 | Owner (Super Admin) | Add new schools and school groups |
 
 See [Different logins](02-logins.md) for the full list of pages each role can open.

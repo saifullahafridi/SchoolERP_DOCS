@@ -10,16 +10,18 @@ from the student's page.
 
 | Menu | Page | Admin / Principal | Accountant | Teacher |
 | --- | --- | :---: | :---: | :---: |
-| Overview | Dashboard, My payslips, My leave | ✓ | ✓ | ✓ |
+| Overview | Dashboard, Notice board, My payslips, My leave | ✓ | ✓ | ✓ |
+| Overview | Parent messages | ✓ all | ✓ fee office | ✓ sent to them |
 | Students | Students (list) | ✓ | ✓ | ✓ |
-| Students | Attendance | ✓ |  | ✓ own sections |
+| Students | Admission enquiries | ✓ | ✓ |  |
+| Students | Attendance, Scan ID cards | ✓ |  | ✓ own sections (attendance) |
 | Students | Monthly attendance | ✓ | ✓ | ✓ |
-| Students | Promote students, Certificates, ID cards | ✓ |  |  |
+| Students | Attendance devices, Promote students, Certificates, ID cards | ✓ |  |  |
 | Academics | My timetable |  |  | ✓ |
-| Academics | Timetable, Results | ✓ | ✓ | ✓ |
-| Academics | Homework & diary, Marks entry | ✓ |  | ✓ own classes |
+| Academics | Timetable, Results, Board exams, Library | ✓ | ✓ | ✓ |
+| Academics | Homework & diary, Marks entry, Syllabus, Lesson plans | ✓ |  | ✓ own classes |
 | Academics | Exams | ✓ |  |  |
-| Fees | All fee pages (collection, vouchers, families, transfer proofs, reminders, reports, setup) | ✓ | ✓ |  |
+| Fees | All fee pages (collection, vouchers, families, scholarships & installments, uniform & books, transfer proofs, reminders, reports, setup) | ✓ | ✓ |  |
 | Finance | Payroll, Salaries, Salary advances, Expenses, Income & spending | ✓ | ✓ |  |
 | School | Staff, Classes & sections, Subjects, Holidays | ✓ | ✓ | ✓ |
 | School | Staff attendance by month | ✓ | ✓ |  |

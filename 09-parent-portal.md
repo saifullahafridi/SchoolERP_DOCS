@@ -28,6 +28,10 @@ Click a child's card to open their page. It has these tabs:
 - **Transport:** only for a child on school transport: route, stop, times, fee and the driver's number. See
   [Transport](11-transport-library-notices.md#what-parents-see).
 - **Library:** only for a child who has borrowed library books: each book, its return date, and any fine.
+- **Board exams:** only for a child entered for a Matric, Inter, O or A Level board exam: the exam, registration and
+  roll no., and the result once the school shows it.
+
+**Message the school** on the child's page starts a message about that child (see below).
 
 ## Paying fees by bank transfer, JazzCash or Easypaisa
 
@@ -40,11 +44,46 @@ Click a child's card to open their page. It has these tabs:
 A parent with two or more children can use **Pay for all your children** to send one proof for all of them.
 **Pay online** appears only if the school has turned on an online payment gateway.
 
+## Messages and complaints
+
+<img src="images/portal-messages.png" alt="A message in the portal" width="320">
+
+Parents can write to the school from **Messages** in the portal menu, instead of calling or sending a note in the bag.
+
+1. Click **New message**.
+2. Choose the child it is **About**, and **To** whom: the class teacher, a subject teacher of the child's class, the
+   Principal or the Fee office.
+3. Choose **Message / question** or **Complaint**. A complaint has a category: teaching, behaviour, fees, transport,
+   facilities, bullying or other.
+4. Write the **Subject** and the **Message**, then **Send**.
+
+Each message is a conversation: the school's replies appear under it, and a badge in the menu shows unread replies.
+When the school marks it **Resolved**, the parent can still write again, which opens it again. A parent can start up
+to 10 new conversations a day.
+
+**At the school:** staff read and answer them in **Overview → Parent messages**. A teacher sees the messages sent to
+them; the Accountant sees those for the Fee office; the Admin and Principal see all of them and can **Forward** one to
+someone else (the parent's view does not change). Filter by Open / Resolved and by Messages / Complaints. **Mark
+resolved** closes a conversation. **Message parents** lets staff start a conversation about a student; it goes to
+every parent login of that child. A teacher can write only to parents in the sections whose attendance they mark.
+
+![Parent messages at the school](images/parent-messages.png)
+
 ## On a mobile phone
 
 <img src="images/portal-phone.png" alt="Portal on a phone" width="320">
 
 The portal works on any phone browser. The menu folds away; tap the menu button at the top to open it.
+
+**Install it as an app.** The first page shows a **Get the app on your phone** card:
+
+- On Android (Chrome) and on a computer (Chrome, Edge), click **Install**. The school's app icon appears on the home
+  screen and opens without the browser bar.
+- On an iPhone, open the portal in Safari, tap Share, then **Add to Home Screen**. Open it from there.
+
+Then click **Turn on notifications** and allow them. New messages from the school, notices and homework arrive as
+notifications, like any other app. **Send a test** checks that they work. **Turn off** stops them on this phone;
+signing out also stops them. Staff get the same card on their Dashboard, for parents' messages.
 
 ---
 

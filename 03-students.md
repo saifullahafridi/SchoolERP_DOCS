@@ -15,11 +15,43 @@ and Status.
 - **Saved views:** save filters you use often. Admin and Principal can share them with other staff.
 - The **Excel** button downloads the list as an Excel file.
 
+## Admission enquiries
+
+![Admission enquiries](images/enquiries.png)
+
+Open **Students → Admission enquiries** (Admin, Principal and Accountant). Every walk-in or phone call about admission
+is written here, so no interested parent is forgotten. The cards at the top show how many are **Open**, how many to
+**Call today**, the enquiries **New this month** and **Admitted this month**, and the **Conversion** (how many
+enquiries became students in the last 12 months). Click **Open**, **Call today** or **Admitted this month** to list those enquiries; filter by **Class wanted**
+and **Came through**, or search a name, phone or E-no.
+
+**Add an enquiry**
+
+1. Click **New enquiry**.
+2. Enter the **Child's name**, gender, date of birth (if known), the **Class wanted**, the **Parent's name** and
+   **Phone**, and how the parent heard of the school (**Came through**: walk-in, phone, social media, referral, website
+   or other). Previous school, address and notes are optional.
+3. Set **Call back on** if you promised to call the parent, then **Save**. The enquiry gets a number like E-4.
+
+![An enquiry](images/enquiry-detail.png)
+
+Click an enquiry to open it. The buttons there follow the usual steps:
+
+- **Follow-up:** write **What was said** on each call or visit, and the next **Call back on** date. The list shows
+  who to call today first. **WhatsApp** opens a chat with the parent's number.
+- **Test date** and **Test result:** set the admission test or interview, then record Passed, Failed or Absent with
+  marks or remarks.
+- **Registration fee:** enter the amount and click **Receive and print slip**. The slip gets its own number (like R-2).
+  This fee is kept on the enquiry; it is not part of the monthly fee collections.
+- **Admit:** opens **Admit student** with the child's and parent's details already filled in. When you save, the
+  enquiry shows **Admitted** and links to the new student.
+- **Close:** the parent is not joining. Write the reason. A closed enquiry can be **Reopened** later.
+
 ## Admit a new student
 
 ![Admit student form](images/student-new.png)
 
-1. In Students, click **Admit student**.
+1. In Students, click **Admit student** (or **Admit** on an admission enquiry, which fills in the details for you).
 2. **Admission:** leave Admission no. empty and the next number is used (for example 2026-0007). Fill in Admission
    date, Class / section and Roll no.
 3. **Student:** name, Gender, Date of birth, B-Form no. and Blood group. Click **Upload** to add a photo; the app crops
@@ -60,7 +92,8 @@ sisters.
 ![ID cards](images/id-cards.png)
 
 Open **Students → ID cards**. Choose a class, tick the students and click **Print**. Ten cards fit on one A4 page. Each
-card has the photo, blood group, school logo and a QR code. Staff cards are made here too.
+card has the photo, blood group, school logo and a QR code. Staff cards are made here too. Scanning the card's QR code
+marks attendance: see [Scan ID cards](04-attendance-and-holidays.md#scan-id-cards).
 
 ---
 
