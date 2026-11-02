@@ -100,6 +100,12 @@ the QR code, the account number, and "Write V-123 in the purpose / remarks", wit
 parent portal shows the same QR when a parent chooses to pay by transfer. A parent who pays this way does not need to
 send a proof: the payment is found on the bank statement (next section).
 
+![Family voucher with Pay by Raast](images/family-voucher-raast.png)
+
+**Family vouchers** get the same box, but it asks for the **family no.**: "Write F-12 in the purpose / remarks". The
+parent pays the whole family's amount in one transfer. A student without a family gets their own slip, which asks for
+the voucher no. as usual.
+
 ## Match the bank statement
 
 ![Match bank statement](images/bank-statement.png)
@@ -109,16 +115,19 @@ typing them one by one.
 
 1. Download the account statement from internet banking as **Excel or CSV** and click **Upload statement**. The app finds
    the heading row by itself; if it picks the wrong columns, fix them with **Columns**.
-2. Only money coming in (credits) is listed. For each line the app looks for the voucher: first "V-123" or
-   "Voucher 123" in the details, then the admission no., then the amount together with the student's full name. It
-   never matches on the amount alone.
-3. Check each match. Type a **Voucher no.** for a line the app could not match. In **Do**, choose **Record**,
-   **Leave** (it comes back next time you upload) or **Not a fee** (never shown again).
-4. Click **Record payments** (it says how many, like "Record 3 payments"). Each one is saved as a bank payment on its voucher. If the parent had already sent a
-   proof for the same voucher and amount, that proof is approved instead.
+2. Only money coming in (credits) is listed. For each line the app looks for a family no. ("F-12" or "Family 12")
+   in the details first, then the voucher: "V-123" or "Voucher 123", then the admission no., then the amount together
+   with the student's full name. It never matches on the amount alone. "F-12" is never taken as voucher 12.
+3. Check each match. A family line shows the family's name, how many vouchers it covers and what the family owes.
+   For a line the app could not match, type the voucher no. (like 1187) or the family no. (like F-12). In **Do**,
+   choose **Record**, **Leave** (it comes back next time you upload) or **Not a fee** (never shown again).
+4. Click **Record payments** (it says how many, like "Record 3 payments"). Each one is saved as a bank payment on its
+   voucher. A family payment is shared over the children's vouchers, oldest due first, with one family receipt (like
+   FR-7), as at the counter. If the parent had already sent a proof for the same voucher (or family) and amount, that
+   proof is approved instead.
 
 Lines that were already recorded are skipped if the same statement is uploaded again. A payment bigger than what the
-voucher owes is refused, so the extra is not lost.
+voucher or family owes is refused, so the extra is not lost.
 
 
 ## Scholarships and installments

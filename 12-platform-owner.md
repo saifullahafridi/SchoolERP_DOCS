@@ -9,15 +9,29 @@ The owner's menu has **Schools**, **Integrations**, **Billing**, **Requests**, *
 
 ![The website](images/website.png)
 
-The main address of the app (without /login) opens the public website: what MY School does, the packages with their
-prices, common questions and a **Get started** form. Schools that already use the app click **Sign in**.
+The main address of the app (without /login) opens the public website. From the top down it has: the headline, a
+strip of short highlights, the feature cards, **How it works** in numbered steps, the packages with their prices, a
+demo band with a button, common questions, and a contact card with the **Get started** form. Schools that already use
+the app click **Sign in**.
+
+![How it works on the website](images/website-steps.png)
 
 ![Owner: website words](images/owner-website.png)
 
-**Website** changes the words on that page: the product name, tagline, headline and the text under it, the feature
-cards (each with an icon, title and text; move them up or down), the questions and answers, and the phone, WhatsApp
-and email for contact. Click **Save website**: the change shows at once. **Open the website** shows it. When there are
-no questions, that part of the page is hidden.
+**Website** changes every word on that page, part by part, in the same order as the page:
+
+- **Top of the page**: the product name, the tagline (the small badge), the headline and the text under it.
+- **Highlights**: the strip under the top. Each has an icon, a title and a short text.
+- **Feature cards**: each with an icon, a title and a text.
+- **How it works**: the numbered steps, each with a title and a text.
+- **Demo band**: its title, text and button words.
+- **Questions**: the questions and their answers.
+- **Contact and links**: the contact person and their role (like "Sales and support"), phone, WhatsApp number, email
+  and address, the user guide link and the note at the foot of the page.
+
+In the lists (highlights, cards, steps, questions), **Add highlight** / **Add card** / **Add step** / **Add question** makes a new one, the arrows move one up or down and ✕
+removes it. A list left empty is hidden on the website, and so are the questions when there are none. Click
+**Save website**: the change shows at once. **Open the website** shows it.
 
 ## Packages
 

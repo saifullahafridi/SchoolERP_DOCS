@@ -173,7 +173,7 @@ portal for parents. You open it in a browser (Chrome or Edge) on a computer or a
 <p>Many schools can use the same app. Each school sees only its own data. An owner with several branches can join them
 in a School Group and see all branches with one login.</p>
 </div>
-    <div class="facts"><div><b>12</b>chapters</div><div><b>75</b>topics</div><div><b>71</b>screenshots</div></div>
+    <div class="facts"><div><b>12</b>chapters</div><div><b>75</b>topics</div><div><b>73</b>screenshots</div></div>
     <a class="btn" href="#contents">Start reading ↓</a>
   </section>
 
@@ -715,6 +715,10 @@ bank account the QR belongs to).</li>
 the QR code, the account number, and &quot;Write V-123 in the purpose / remarks&quot;, with that voucher&#39;s own number. The
 parent portal shows the same QR when a parent chooses to pay by transfer. A parent who pays this way does not need to
 send a proof: the payment is found on the bank statement (next section).</p>
+<p><figure><img src="images/family-voucher-raast.png" alt="Family voucher with Pay by Raast" loading="lazy"><figcaption>Family voucher with Pay by Raast</figcaption></figure></p>
+<p><strong>Family vouchers</strong> get the same box, but it asks for the <strong>family no.</strong>: &quot;Write F-12 in the purpose / remarks&quot;. The
+parent pays the whole family&#39;s amount in one transfer. A student without a family gets their own slip, which asks for
+the voucher no. as usual.</p>
 <h3 id="ch05-match-the-bank-statement"><a class="anchor" href="#ch05-match-the-bank-statement" aria-hidden="true">#</a>Match the bank statement</h3>
 <p><figure><img src="images/bank-statement.png" alt="Match bank statement" loading="lazy"><figcaption>Match bank statement</figcaption></figure></p>
 <p><strong>Fees → Match bank statement</strong> turns the money that came into the school&#39;s account into fee receipts, without
@@ -722,16 +726,19 @@ typing them one by one.</p>
 <ol>
 <li>Download the account statement from internet banking as <strong>Excel or CSV</strong> and click <strong>Upload statement</strong>. The app finds
 the heading row by itself; if it picks the wrong columns, fix them with <strong>Columns</strong>.</li>
-<li>Only money coming in (credits) is listed. For each line the app looks for the voucher: first &quot;V-123&quot; or
-&quot;Voucher 123&quot; in the details, then the admission no., then the amount together with the student&#39;s full name. It
-never matches on the amount alone.</li>
-<li>Check each match. Type a <strong>Voucher no.</strong> for a line the app could not match. In <strong>Do</strong>, choose <strong>Record</strong>,
-<strong>Leave</strong> (it comes back next time you upload) or <strong>Not a fee</strong> (never shown again).</li>
-<li>Click <strong>Record payments</strong> (it says how many, like &quot;Record 3 payments&quot;). Each one is saved as a bank payment on its voucher. If the parent had already sent a
-proof for the same voucher and amount, that proof is approved instead.</li>
+<li>Only money coming in (credits) is listed. For each line the app looks for a family no. (&quot;F-12&quot; or &quot;Family 12&quot;)
+in the details first, then the voucher: &quot;V-123&quot; or &quot;Voucher 123&quot;, then the admission no., then the amount together
+with the student&#39;s full name. It never matches on the amount alone. &quot;F-12&quot; is never taken as voucher 12.</li>
+<li>Check each match. A family line shows the family&#39;s name, how many vouchers it covers and what the family owes.
+For a line the app could not match, type the voucher no. (like 1187) or the family no. (like F-12). In <strong>Do</strong>,
+choose <strong>Record</strong>, <strong>Leave</strong> (it comes back next time you upload) or <strong>Not a fee</strong> (never shown again).</li>
+<li>Click <strong>Record payments</strong> (it says how many, like &quot;Record 3 payments&quot;). Each one is saved as a bank payment on its
+voucher. A family payment is shared over the children&#39;s vouchers, oldest due first, with one family receipt (like
+FR-7), as at the counter. If the parent had already sent a proof for the same voucher (or family) and amount, that
+proof is approved instead.</li>
 </ol>
 <p>Lines that were already recorded are skipped if the same statement is uploaded again. A payment bigger than what the
-voucher owes is refused, so the extra is not lost.</p>
+voucher or family owes is refused, so the extra is not lost.</p>
 <h3 id="ch05-scholarships-and-installments"><a class="anchor" href="#ch05-scholarships-and-installments" aria-hidden="true">#</a>Scholarships and installments</h3>
 <p>Open <strong>Fees → Scholarships &amp; installments</strong>. Both are used when the month&#39;s vouchers are generated.</p>
 <p><figure><img src="images/scholarships.png" alt="Scholarships" loading="lazy"><figcaption>Scholarships</figcaption></figure></p>
@@ -1315,13 +1322,26 @@ each mobile number, even if a family has several children.</p>
 The owner&#39;s menu has <strong>Schools</strong>, <strong>Integrations</strong>, <strong>Billing</strong>, <strong>Requests</strong>, <strong>Packages</strong> and <strong>Website</strong>.</p>
 <h3 id="ch12-the-website"><a class="anchor" href="#ch12-the-website" aria-hidden="true">#</a>The website</h3>
 <p><figure><img src="images/website.png" alt="The website" loading="lazy"><figcaption>The website</figcaption></figure></p>
-<p>The main address of the app (without /login) opens the public website: what MY School does, the packages with their
-prices, common questions and a <strong>Get started</strong> form. Schools that already use the app click <strong>Sign in</strong>.</p>
+<p>The main address of the app (without /login) opens the public website. From the top down it has: the headline, a
+strip of short highlights, the feature cards, <strong>How it works</strong> in numbered steps, the packages with their prices, a
+demo band with a button, common questions, and a contact card with the <strong>Get started</strong> form. Schools that already use
+the app click <strong>Sign in</strong>.</p>
+<p><figure><img src="images/website-steps.png" alt="How it works on the website" loading="lazy"><figcaption>How it works on the website</figcaption></figure></p>
 <p><figure><img src="images/owner-website.png" alt="Owner: website words" loading="lazy"><figcaption>Owner: website words</figcaption></figure></p>
-<p><strong>Website</strong> changes the words on that page: the product name, tagline, headline and the text under it, the feature
-cards (each with an icon, title and text; move them up or down), the questions and answers, and the phone, WhatsApp
-and email for contact. Click <strong>Save website</strong>: the change shows at once. <strong>Open the website</strong> shows it. When there are
-no questions, that part of the page is hidden.</p>
+<p><strong>Website</strong> changes every word on that page, part by part, in the same order as the page:</p>
+<ul>
+<li><strong>Top of the page</strong>: the product name, the tagline (the small badge), the headline and the text under it.</li>
+<li><strong>Highlights</strong>: the strip under the top. Each has an icon, a title and a short text.</li>
+<li><strong>Feature cards</strong>: each with an icon, a title and a text.</li>
+<li><strong>How it works</strong>: the numbered steps, each with a title and a text.</li>
+<li><strong>Demo band</strong>: its title, text and button words.</li>
+<li><strong>Questions</strong>: the questions and their answers.</li>
+<li><strong>Contact and links</strong>: the contact person and their role (like &quot;Sales and support&quot;), phone, WhatsApp number, email
+and address, the user guide link and the note at the foot of the page.</li>
+</ul>
+<p>In the lists (highlights, cards, steps, questions), <strong>Add highlight</strong> / <strong>Add card</strong> / <strong>Add step</strong> / <strong>Add question</strong> makes a new one, the arrows move one up or down and ✕
+removes it. A list left empty is hidden on the website, and so are the questions when there are none. Click
+<strong>Save website</strong>: the change shows at once. <strong>Open the website</strong> shows it.</p>
 <h3 id="ch12-packages"><a class="anchor" href="#ch12-packages" aria-hidden="true">#</a>Packages</h3>
 <p><figure><img src="images/owner-packages.png" alt="Owner: packages" loading="lazy"><figcaption>Owner: packages</figcaption></figure></p>
 <p><strong>Packages</strong> are what the website sells, for example Starter (up to 300 students), Standard (up to 800) and Premium
