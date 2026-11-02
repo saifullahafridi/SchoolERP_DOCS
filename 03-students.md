@@ -47,6 +47,31 @@ Click an enquiry to open it. The buttons there follow the usual steps:
   enquiry shows **Admitted** and links to the new student.
 - **Close:** the parent is not joining. Write the reason. A closed enquiry can be **Reopened** later.
 
+### Online admission form
+
+![Online admission form settings](images/online-form-settings.png)
+
+Parents can apply from their phone without visiting. Click **Online form** on the Admission enquiries page:
+
+1. Tick **Taking applications**.
+2. Choose the **Classes open for admission** (or **All classes**).
+3. Write a **Note at the top of the form**, for example the last date, the test day and the documents to bring.
+4. Click **Save**. Only the admin and principal can change these; other staff see the link.
+
+The dialog shows the form's link (like `/apply/GHS`, with your school code) and its QR code. **Copy link** to send it on
+WhatsApp or put it on your Facebook page; **Print QR poster** prints an A4 "Admissions open" poster for the gate or the
+notice board.
+
+![The form on a parent's phone](images/apply-form.png)
+
+The parent fills in the child's name, boy or girl, date of birth, class and previous school, then their own name,
+mobile and address, and can write a question. They get a reference number like **E-12**. The application arrives in
+the list as an open enquiry from **Website**, with **Call back on** set to today, and the admin and principal get a
+notification. If the same child and mobile apply again while the enquiry is open, it is added there as a note
+instead of a second enquiry. Untick **Taking applications** to close the form: it then asks parents to call the school.
+
+![Admissions open poster](images/admission-poster.png)
+
 ## Admit a new student
 
 ![Admit student form](images/student-new.png)
@@ -70,6 +95,10 @@ Click an enquiry to open it. The buttons there follow the usual steps:
 2. Fill in the template and upload it (.xlsx or .csv).
 3. The **Preview** checks every row. Problems like a wrong date, a repeated row or a full class are shown in red.
 4. Fix the problems, or skip the bad rows and import the rest.
+
+Moving from other software? Upload its student export as it is: columns like "GR No", "Father Name", "Mobile" or
+"DOB" are recognised. If it has a **balance** column ("Balance", "Dues", "Arrears"…), what each student still owed
+is brought over too, as an opening balance (see the Fees chapter).
 
 ## A student's page
 

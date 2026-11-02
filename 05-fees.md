@@ -129,6 +129,31 @@ typing them one by one.
 Lines that were already recorded are skipped if the same statement is uploaded again. A payment bigger than what the
 voucher or family owes is refused, so the extra is not lost.
 
+## Opening balances (fees owed in your old system)
+
+![Opening balances](images/opening-balances.png)
+
+When the school moves to MY School, many students still owe fees from the old software or registers. **Fees →
+Opening balances** brings those amounts over. Each one is added **once** to the student's next voucher as
+**Previous balance**, and is then paid like any other fee.
+
+- **Add one:** choose the student, type the amount owed and a note (like "Old register"). **Change** or ✕ works until
+  the balance is on a voucher.
+- **Import from Excel:** export the dues, defaulters or balance list from the old software as Excel or CSV and upload
+  it as it is. The file needs an admission no. (or the student's and father's name) and a balance column; headings
+  like "GR No", "Total Dues", "Arrears" or "Balance" are recognised. No export? Click **Sheet with my students** for
+  a sheet listing every student and type the amounts in it.
+
+![Import opening balances](images/opening-import.png)
+
+Every row is checked before anything is saved. Students who owe nothing (0 or empty) are left out. An amount in
+brackets or with a minus means the student paid ahead: it is not brought over, so give a concession on the next
+voucher instead. A student who is not found, or is in the file twice, is shown in red. Click **Save** to keep the
+good rows.
+
+When you **Generate vouchers**, each waiting balance is added to the student's voucher even if no fee head is ticked
+for it. If you cancel that voucher, the balance waits for the next one again.
+
 
 ## Scholarships and installments
 
