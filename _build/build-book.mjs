@@ -119,6 +119,7 @@ a:hover { text-decoration: underline; }
 .topbar .where { color: var(--muted); font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; }
 .btn { font: 500 14px var(--sans); color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; cursor: pointer; white-space: nowrap; }
 .btn:hover { border-color: var(--accent); }
+a.btn { text-decoration: none; }
 #menuBtn { display: none; }
 .progress { position: absolute; left: 0; bottom: -1px; height: 2px; background: var(--accent); width: 0; }
 
@@ -205,6 +206,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
   .contents ol ol { columns: 1; padding-left: 0; }
   .contents > ol > li > a { flex-direction: column; gap: 2px; }
   .topbar .where { display: none; }
+  #siteBtn { display: none; }
   body { font-size: 16px; }
 }
 @media print {
@@ -223,6 +225,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
   <button class="btn" id="menuBtn" aria-label="Open chapters">☰ Chapters</button>
   <a class="brand" href="#cover">${esc(bookTitle)}</a>
   <span class="where" id="where"></span>
+  <a class="btn" id="siteBtn" href="https://schoolhisaab.com">Visit schoolhisaab.com</a>
   <button class="btn" id="printBtn" title="Print or save the whole book as PDF">Print / PDF</button>
   <button class="btn" id="themeBtn" aria-label="Switch light or dark">◐</button>
   <div class="progress" id="progress"></div>
