@@ -133,7 +133,7 @@ voucher or family owes is refused, so the extra is not lost.
 
 ![Opening balances](images/opening-balances.png)
 
-When the school moves to MY School, many students still owe fees from the old software or registers. **Fees →
+When the school moves to School Hisaab, many students still owe fees from the old software or registers. **Fees →
 Opening balances** brings those amounts over. Each one is added **once** to the student's next voucher as
 **Previous balance**, and is then paid like any other fee.
 

@@ -1,6 +1,6 @@
-# MY School — User Guide
+# School Hisaab — User Guide
 
-MY School is a web app that runs the whole school in one place: admissions, attendance, fees, exams, payroll and a
+School Hisaab is a web app that runs the whole school in one place: admissions, attendance, fees, exams, payroll and a
 portal for parents. You open it in a browser (Chrome or Edge) on a computer or a mobile phone.
 
 Many schools can use the same app. Each school sees only its own data. An owner with several branches can join them

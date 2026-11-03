@@ -2,7 +2,7 @@
 
 # For the platform owner
 
-This chapter is for the Owner (Super Admin) who runs MY School and sells it to schools. Schools never see these pages.
+This chapter is for the Owner (Super Admin) who runs School Hisaab and sells it to schools. Schools never see these pages.
 The owner's menu has **Schools**, **Integrations**, **Billing**, **Requests**, **Packages** and **Website**.
 
 ## The website
@@ -26,8 +26,8 @@ the app click **Sign in**.
 - **How it works**: the numbered steps, each with a title and a text.
 - **Demo band**: its title, text and button words.
 - **Questions**: the questions and their answers.
-- **Contact and links**: the contact person and their role (like "Sales and support"), phone, WhatsApp number, email
-  and address, the user guide link and the note at the foot of the page.
+- **Contact and links**: the contact person and their role (like "Sales and support"), phone, WhatsApp number, the sales email
+  (sales@schoolhisaab.com) and the support email for schools already using it (support@schoolhisaab.com), the address, the user guide link and the note at the foot of the page.
 
 In the lists (highlights, cards, steps, questions), **Add highlight** / **Add card** / **Add step** / **Add question** makes a new one, the arrows move one up or down and ✕
 removes it. A list left empty is hidden on the website, and so are the questions when there are none. Click
