@@ -29,6 +29,8 @@ the app click **Sign in**.
 - **Contact and links**: the contact person and their role (like "Sales and support"), phone, WhatsApp number, the sales email
   (sales@schoolhisaab.com) and the support email for schools already using it (support@schoolhisaab.com), the address, the user guide link and the note at the foot of the page.
 
+![Contact part of the website: phone, WhatsApp, sales and support emails](images/website-contact.png)
+
 In the lists (highlights, cards, steps, questions), **Add highlight** / **Add card** / **Add step** / **Add question** makes a new one, the arrows move one up or down and ✕
 removes it. A list left empty is hidden on the website, and so are the questions when there are none. Click
 **Save website**: the change shows at once. **Open the website** shows it.
