@@ -44,11 +44,63 @@ and if WhatsApp cannot deliver it (the number is not on WhatsApp, or the parent 
 24 hours and WhatsApp refuses it) the same text goes by SMS. Tick **Tell parents when their child is marked absent**
 to send absence alerts, and change the wording of the message if you like; the preview shows its length.
 
+## School website
+
+![The school website editor](images/school-website.png)
+
+The school can have its own public website: a front page for parents and new families, kept up to date from the
+school's records. The platform owner switches it on for the school (it is a paid service); until then the page can be
+set up and previewed but not published. Open **School → School website** (Admin and Principal).
+
+- **Address:** the website is always at `…/s/CODE` (your school code, for example `/s/GHS`). If the school has its own
+  domain, like greenhills.edu.pk, ask the platform owner to connect it; the site then also shows there.
+- **Published:** tick it and click **Save** to let anyone open the site. Untick it to take the site down.
+- **Preview** shows the page exactly as visitors will see it, published or not.
+
+![The five website designs](images/website-themes.png)
+
+**Theme:** five designs, each with its own layout and lettering, not only a colour:
+
+| Theme | Looks like |
+| --- | --- |
+| Modern | Clean and bright, a large photo beside the title |
+| Classic | Serif titles over a full-width photo, navy and gold |
+| Playful | Rounded and colourful, for primary schools and Montessori |
+| Elegant | Black and white with fine lines, a wide photo under the title |
+| Heritage | Deep green and gold with a geometric pattern |
+
+**Main colour** changes the theme's colour to your uniform or logo colour.
+
+What you write:
+
+- **Top of the page:** a small line above the title, the title (empty = "Welcome to *school name*"), a short text and
+  the top picture. Wide photos work best; pictures are made smaller before they are uploaded.
+- **About and principal's message:** about the school, the year it was founded (shown as "Years of teaching"), and the
+  principal's name, title, photo and message.
+- **Facilities:** up to 12 cards with an icon, a title and a line of text (transport, library, labs …).
+- **Gallery:** up to 40 photos with captions; use the arrows to change their order. Visitors can click a photo to see
+  it large.
+- **Contact and social:** email, WhatsApp number, office hours, a Google Maps link and Facebook, Instagram and YouTube
+  pages. The phone and address come from the School profile.
+
+**Filled in from your records** (switch off any part you don't want to show):
+
+- **Numbers:** active students, teachers, classes and years of teaching.
+- **News:** notices for everyone that were ticked **Also show on the school website**, while they are live.
+- **Calendar:** holidays and events in the next four months.
+- **Admissions:** shown while the [online admission form](03-students.md) is open, with the open classes and a button
+  to apply.
+- **Toppers:** the school's and each class's top students in the latest published exam.
+- **Board results:** pass rate and top three of declared board exams.
+- **Our faculty:** teaching staff with their designation, qualification and photo.
+
+Nothing private is ever shown: no fees, phone numbers of parents or student photos.
+
 ## Paid services
 
 ![Paid services](images/my-services.png)
 
-SMS, WhatsApp and online payments (JazzCash, Easypaisa) cost money, so the platform owner switches them on for each
+SMS, WhatsApp, online payments (JazzCash, Easypaisa) and the school website cost money, so the platform owner switches them on for each
 school and charges for them. **Administration → Paid services** (Admin and Principal) shows:
 
 - The school's **package**, how it is paid (monthly, yearly or once) and the student limit, like "13 active students

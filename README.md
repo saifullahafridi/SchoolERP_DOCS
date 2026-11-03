@@ -17,7 +17,7 @@ in a School Group and see all branches with one login.
 7. [Staff, Payroll and Expenses](07-staff-payroll-expenses.md)
 8. [School Groups (Branches) and Transfers](08-school-groups.md)
 9. [Parent Portal](09-parent-portal.md) — also Urdu, messages and complaints, installing the app and notifications
-10. [Users, Audit Log, School Setup and Common Questions](10-settings-and-faq.md) — also the school's paid services
+10. [Users, Audit Log, School Setup and Common Questions](10-settings-and-faq.md) — also the school website (five designs) and the school's paid services
 11. [Transport, Library and Notice board](11-transport-library-notices.md) — vans and routes, lending books and fines, circulars for staff and parents
 12. [For the platform owner](12-platform-owner.md) — the website, packages, school requests, paid services and monthly billing
 
@@ -27,12 +27,12 @@ New school? Start with [School setup](10-settings-and-faq.md#school-setup).
 
 | Role | What they can do |
 | --- | --- |
-| Admin | Everything: students, staff, fees, users, settings, school bank accounts |
+| Admin | Everything: students, staff, fees, users, settings, school bank accounts, the school website |
 | Principal | Same menu as Admin: students, attendance, exams, fees, payroll, users, reports |
 | Accountant | Fees, collection, vouchers, scholarships, installments, uniform and book sales, admission enquiries, payroll, expenses and finance reports |
 | Teacher | Attendance, marks, homework, students at risk in their own class, syllabus and lesson plans for their own classes only; scanning ID cards; lending library books; answering parents' messages |
 | Parent | Portal: their children's fees, attendance, results, board exams, date sheets, timetable, homework, school van, library books and notices, in English or Urdu; send proof of a fee payment; write to the school; install the app for notifications |
-| Owner (Super Admin) | Add schools and school groups; the website, packages and requests from new schools; paid services (SMS, WhatsApp, JazzCash, Easypaisa) and each school's monthly bill |
+| Owner (Super Admin) | Add schools and school groups; the website, packages and requests from new schools; paid services (SMS, WhatsApp, JazzCash, Easypaisa, school websites and their domains) and each school's monthly bill |
 
 See [Different logins](02-logins.md) for the full list of pages each role can open.
 

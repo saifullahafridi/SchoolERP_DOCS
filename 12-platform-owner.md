@@ -74,6 +74,26 @@ On **Schools**, click **Services** on a school. Its page has:
   account** (their own Twilio account), the monthly fee and the price per SMS part / per message.
 - **JazzCash** and **Easypaisa:** on or off, the school's own merchant details, the monthly fee and the charge per
   payment (a fixed amount and / or a % of the amount).
+- **School website:** on or off, the monthly fee and the school's own domain (optional).
+
+### School website and its own domain
+
+![Owner: the School website service](images/owner-website-service.png)
+
+Tick **School website on for this school**, enter the monthly fee and click **Save School website**. The school can
+then publish its site from **School → School website** (see [School website](10-settings-and-faq.md#school-website));
+it is always at `<your address>/s/CODE`. Switching the service off takes the site down at once; the school's words and
+photos are kept.
+
+For the school's **own domain** (greenhills.edu.pk):
+
+1. The school (or you) adds a DNS record at its domain company: an **A record** to your server's IP address (or a
+   **CNAME** to your app's address), for both `greenhills.edu.pk` and `www.greenhills.edu.pk`.
+2. On the server, add the domain to the site's hosting binding (in IIS: **Bindings → Add**, host name
+   `greenhills.edu.pk`, and again for `www.`) with an SSL certificate for it (for example a free Let's Encrypt one).
+3. Enter the domain on the school's Services page and save. A domain can belong to one school only.
+
+Visitors to that domain then see the school's website on the front page; the ERP itself still opens at `/login`.
 
 ## Integrations
 

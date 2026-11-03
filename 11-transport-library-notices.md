@@ -151,6 +151,9 @@ page, and the school sees how many parents have read each one (**Seen by**).
 A parents' notice can also be texted: choose **Send by** (SMS or WhatsApp) and edit the **Message**. One text goes to
 each mobile number, even if a family has several children.
 
+A notice for everyone (staff and parents, all classes) can also go on the school's public website: tick **Also show
+on the school website**. It shows there while it is live. See [School website](10-settings-and-faq.md#school-website).
+
 ---
 
 Previous: [Users, Settings and Common Questions](10-settings-and-faq.md) · Next: [For the platform owner](12-platform-owner.md)
